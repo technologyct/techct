@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZC Consulting LLC | Professional Technology Consultation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f2f2f2;        
+            --card-bg: #ffffff;   
+            --text: #1a1a1a;      
+            --sub: #555555;       
+            --accent: #2c3e50;    
+            --hover-bg: #1a252f;  
+            --url-color: #7f8c8d; 
+            --border: #e0e0e0;    
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            grid-column: span 3;
+            padding: 160px 40px 100px; /* Increased padding since URL is gone */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700; 
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        .brand-name {
+            display: inline-block; 
+            margin-bottom: 24px;
+            color: var(--accent); 
+            border-bottom: 4px solid var(--accent); 
+            padding-bottom: 4px;
+        }
+
+        .service-desc-line {
+            display: block; 
+            color: var(--text); 
+            font-weight: 400;
+            font-size: 0.4em; 
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .grid-item {
+            padding: 80px 60px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            margin: -0.5px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .grid-item:hover { 
+            background: var(--hover-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+            border-color: var(--hover-bg);
+        }
+
+        .grid-item:hover h3, 
+        .grid-item:hover p {
+            color: #ffffff;
+        }
+
+        .grid-item:hover .num {
+            background: #ffffff;
+            color: var(--hover-bg);
+        }
+
+        .num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 18px; 
+            font-weight: 600;
+            color: #ffffff; 
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 2px 16px;
+            background: var(--accent); 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--sub);
+            margin: 0;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .contact-block {
+            grid-column: span 3;
+            padding: 120px 40px 60px;
+            text-align: center;
+        }
+
+        .cta-text { 
+            font-size: 24px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            color: var(--accent);
+            background: var(--card-bg);
+            border: 2px solid var(--accent);
+            padding: 18px 45px;
+            border-radius: 0; 
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .cta-text:hover { 
+            background: var(--accent); 
+            color: #ffffff;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            grid-column: span 3;
+            padding: 40px 0 80px;
+            text-align: center;
+        }
+
+        .brand-url { 
+            font-size: 14px; 
+            font-weight: 600; 
+            letter-spacing: 0.5em; 
+            color: var(--url-color); 
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 1100px) {
+            body { grid-template-columns: 1fr; }
+            header, .grid-item, .contact-block, footer { grid-column: 1; padding: 60px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>
+            <span class="brand-name">ZC Consulting LLC</span>
+            <span class="service-desc-line">Professional Technology</span>
+            <span class="service-desc-line">Consultation and Service</span>
+        </h1>
+    </header>
+
+    <div class="grid-item">
+        <span class="num">I</span>
+        <h3>Networking</h3>
+        <p>Modernized network configurations ensure a fast, stable, and seamless connection across all devices. Optimizing your networked environments for maximum speed and reliable connectivity.</p>
+    </div>
+
+    <div class="grid-item">
+        <span class="num">II</span>
+        <h3>Security</h3>
+        <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
+    </div>
+
+    <div class="grid-item">
+        <span class="num">III</span>
+        <h3>Cloud</h3>
+        <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These environments are professionally managed to ensure your information is accessible and protected from any location.</p>
+    </div>
+
+    <div class="grid-item">
+        <span class="num">IV</span>
+        <h3>Support</h3>
+        <p>Professional technical assistance is available to resolve complex issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
+    </div>
+
+    <div class="grid-item">
+        <span class="num">V</span>
+        <h3>Training</h3>
+        <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This professional development focuses on helping you build the skills needed to navigate your digital tools.</p>
+    </div>
+
+    <div class="grid-item">
+        <span class="num">VI</span>
+        <h3>Upgrades</h3>
+        <p>System modernizations and updates keep your hardware and software performing at their peak. Keeping current with the latest features ensures long-term compatibility and improved system performance.</p>
+    </div>
+
+    <div class="contact-block">
+        <a href="mailto:contact@techct.com" class="cta-text">Schedule a Consultation</a>
+    </div>
+
+    <footer>
+        <a href="http://www.techct.com" class="brand-url">www.techct.com</a>
+    </footer>
+
+</body>
+</html>
