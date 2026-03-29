@@ -47,7 +47,7 @@
 
         .brand-name {
             display: inline-block; 
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: var(--accent); 
             border-bottom: 4px solid var(--accent); 
             padding-bottom: 4px;
@@ -58,12 +58,23 @@
             display: block; 
             color: var(--text); 
             font-weight: 400;
-            font-size: 0.45em; 
+            font-size: 0.42em; 
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            opacity: 0.8;
+            letter-spacing: 0.18em;
+            opacity: 0.9;
             line-height: 1.6;
-            margin-top: 5px;
+        }
+
+        .trust-tagline {
+            display: block;
+            font-size: 0.32em;
+            color: var(--accent);
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 30px; 
+            letter-spacing: 0.05em;
+            text-transform: none;
+            opacity: 1;
         }
 
         .grid-item {
@@ -75,25 +86,32 @@
             position: relative;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none; /* Prevents text selection while dragging */
         }
 
-        .grid-item:hover { 
+        /* DESKTOP HOVER: Only works if a mouse is present */
+        @media (hover: hover) {
+            .grid-item:hover { 
+                background: var(--hover-bg);
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                z-index: 10;
+                border-color: var(--hover-bg);
+            }
+            .grid-item:hover h3, .grid-item:hover p { color: #ffffff; }
+            .grid-item:hover .num { background: #ffffff; color: var(--hover-bg); }
+        }
+
+        /* MOBILE TOUCH: Only highlights while finger is actually touching the screen */
+        .grid-item:active {
             background: var(--hover-bg);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            z-index: 10;
             border-color: var(--hover-bg);
+            transition: background 0s; /* Instant color on touch */
         }
-
-        .grid-item:hover h3, 
-        .grid-item:hover p {
-            color: #ffffff;
-        }
-
-        .grid-item:hover .num {
-            background: #ffffff;
-            color: var(--hover-bg);
-        }
+        .grid-item:active h3, .grid-item:active p { color: #ffffff; }
+        .grid-item:active .num { background: #ffffff; color: var(--hover-bg); }
 
         .num {
             font-family: 'Cormorant Garamond', serif;
@@ -115,7 +133,6 @@
             font-weight: 600;
             margin: 0 0 16px 0;
             color: var(--accent);
-            transition: color 0.3s ease;
         }
 
         p {
@@ -124,7 +141,6 @@
             color: var(--sub);
             margin: 0;
             font-weight: 300;
-            transition: color 0.3s ease;
         }
 
         .contact-block {
@@ -181,48 +197,25 @@
             margin: 0;
         }
         
-        /* Mobile Portrait Fixes */
         @media (max-width: 900px) {
-            body { 
-                grid-template-columns: 1fr; 
-            }
-            
-            header, .grid-item, .contact-block, footer { 
-                grid-column: 1; 
-                width: 100%;
-            }
-
-            header {
-                padding: 80px 20px 60px;
-            }
-
-            .grid-item {
-                padding: 60px 30px;
-                border-left: none;
-                border-right: none;
-            }
-
-            .cta-text {
-                font-size: 18px;
-                padding: 16px 30px;
-                width: 85%;
-                max-width: 320px;
-                box-sizing: border-box;
-            }
-
-            .brand-url {
-                letter-spacing: 0.2em;
-            }
+            body { grid-template-columns: 1fr; }
+            header, .grid-item, .contact-block, footer { grid-column: 1; width: 100%; }
+            header { padding: 80px 20px 60px; }
+            .grid-item { padding: 60px 30px; border-left: none; border-right: none; }
+            .cta-text { font-size: 18px; padding: 16px 30px; width: 85%; max-width: 320px; box-sizing: border-box; }
+            .brand-url { letter-spacing: 0.2em; }
+            .trust-tagline { font-size: 0.38em; padding: 0 10px; line-height: 1.4; margin-top: 25px; }
         }
     </style>
 </head>
-<body>
+<body ontouchstart="">
 
     <header>
         <h1>
             <span class="brand-name">ZC Consulting LLC</span>
             <span class="service-desc-line">Professional Technology</span>
             <span class="service-desc-line">Consultation and Service</span>
+            <span class="trust-tagline">Industry-Certified Expertise. Fully Insured. Service You Can Trust.</span>
         </h1>
     </header>
 
@@ -258,7 +251,7 @@
 
     <div class="grid-item">
         <span class="num">VI</span>
-        <h3>Upgrade</h3>
+        <h3>Upgrades</h3>
         <p>System modernizations and updates keep your hardware and software performing at their peak. Keeping current with the latest features ensures long-term compatibility and improved system performance.</p>
     </div>
 
