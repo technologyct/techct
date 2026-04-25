@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZC Consulting LLC | Professional Technology Consultation</title>
+    
+    <!-- High-Performance Font Delivery -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg: #f2f2f2;        
@@ -18,104 +23,221 @@
         }
 
         * {
-            box-sizing: border-box; /* Ensures padding stays inside the box width */
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
         }
 
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            overflow-x: hidden; /* Fixes the side-scrolling issue */
+            overflow-x: hidden; 
+            background-color: var(--bg);
+            /* RAZOR SHARP: Forces the browser to prioritize text clarity */
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         body {
-            background-color: var(--bg);
             color: var(--text);
             font-family: 'Outfit', sans-serif;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
+            animation: fadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
-            grid-column: 1 / -1;
-            padding: 100px 20px 60px;
+            padding: 100px 20px 50px; 
             text-align: center;
-            width: 100%;
         }
 
-        h1 {
+        .title-wrapper {
             font-size: clamp(2.2rem, 8vw, 3.8rem);
             font-weight: 700; 
             letter-spacing: -0.02em;
             line-height: 1.1;
+            max-width: 1200px;
             margin: 0 auto;
-            max-width: 100%;
         }
 
-        .brand-name {
+        h1.brand-name {
+            font-size: 1em;
             display: inline-block; 
-            margin-bottom: 24px;
+            margin: 0 0 24px 0;
             color: var(--accent); 
             border-bottom: 4px solid var(--accent); 
             padding-bottom: 4px;
         }
 
-        .service-desc-line {
-            display: block; 
-            color: var(--text); 
+        h2.service-desc-line {
+            font-size: 0.42em;
             font-weight: 400;
-            font-size: 0.42em; 
+            margin: 0;
+            color: var(--text); 
             text-transform: uppercase;
             letter-spacing: 0.18em;
             opacity: 0.9;
             line-height: 1.6;
         }
 
-        .trust-tagline {
-            display: block;
+        p.trust-tagline {
             font-size: 0.32em;
+            font-weight: 600;
+            margin: 30px 0 0 0;
             color: var(--accent);
             font-style: italic;
-            font-weight: 600;
-            margin-top: 30px; 
             letter-spacing: 0.05em;
-            text-transform: none;
+        }
+
+        .contact-block {
+            padding: 0 20px 60px; 
+            text-align: center;
+        }
+
+        .cta-text { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-size: 20px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            color: var(--accent);
+            background: var(--card-bg);
+            border: 2px solid var(--accent);
+            padding: 18px 45px;
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        background 0.3s ease, 
+                        box-shadow 0.3s ease;
+        }
+
+        .cta-arrow {
+            display: inline-block;
+            font-size: 1.25em; 
+            transition: transform 0.3s ease;
+            line-height: 1;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+
+        .cta-text:hover { 
+            background: var(--accent); 
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .cta-text:hover .cta-arrow {
+            transform: translateX(6px);
+        }
+
+        /* Keyboard Accessibility - CTA Button */
+        .cta-text:focus-visible {
+            outline: 3px dashed var(--accent);
+            outline-offset: 4px;
+        }
+
+        /* 
+           FLICKER-FREE GRID ARCHITECTURE
+           Using gap: 1px as a hardware-stable divider.
+        */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            background: var(--border);
+            gap: 1px; 
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            isolation: isolate; 
         }
 
         .grid-item {
-            padding: 60px 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            margin: -0.5px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
+            background: var(--bg);
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            -webkit-tap-highlight-color: transparent;
             user-select: none;
+            /* Sticky Z-index logic: stays on top for 0.4s during return animation */
+            transition: z-index 0s linear 0.4s; 
+            z-index: 1;
         }
 
+        .card-inner {
+            padding: 80px 50px;
+            height: 100%;
+            width: 100%;
+            background: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            /* Pure Y-axis transform keeps text strictly vector and razor-sharp */
+            transform: translateY(0);
+            transition: 
+                transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                background 0.3s ease;
+        }
+
+        .card-inner h3, .card-inner p, .card-inner .num {
+            transition: color 0.3s ease;
+        }
+
+        /* DESKTOP HOVER - High Fidelity Lift */
         @media (hover: hover) {
-            .grid-item:hover { 
-                background: var(--hover-bg);
-                transform: translateY(-5px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            .grid-item:hover {
                 z-index: 10;
-                border-color: var(--hover-bg);
+                /* Removes the sticky delay on entry for instant reaction */
+                transition: z-index 0s linear 0s; 
             }
-            .grid-item:hover h3, .grid-item:hover p { color: #ffffff; }
-            .grid-item:hover .num { background: #ffffff; color: var(--hover-bg); }
+            .grid-item:hover .card-inner { 
+                background: var(--hover-bg);
+                transform: translateY(-16px);
+                box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+            }
+            .grid-item:hover h3, .grid-item:hover p { 
+                color: #ffffff; 
+                -webkit-font-smoothing: subpixel-antialiased; 
+            }
+            .grid-item:hover .num { 
+                background: #ffffff; 
+                color: var(--hover-bg); 
+            }
         }
 
+        /* MOBILE TOUCH - Snappy, Tactile, and Scroll-Safe */
         .grid-item:active {
+            z-index: 10;
+            transition: z-index 0s linear 0s;
+        }
+        .grid-item:active .card-inner {
             background: var(--hover-bg);
-            border-color: var(--hover-bg);
-            transition: background 0s;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: all 0.1s ease; 
         }
         .grid-item:active h3, .grid-item:active p { color: #ffffff; }
         .grid-item:active .num { background: #ffffff; color: var(--hover-bg); }
+
+        /* Keyboard Accessibility - Grid Cards */
+        .grid-item:focus-visible {
+            outline: none; 
+            z-index: 10;
+        }
+        .grid-item:focus-visible .card-inner {
+            background: var(--hover-bg);
+            transform: translateY(-8px);
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+        .grid-item:focus-visible h3, .grid-item:focus-visible p { color: #ffffff; }
+        .grid-item:focus-visible .num { background: #ffffff; color: var(--hover-bg); }
 
         .num {
             font-family: 'Cormorant Garamond', serif;
@@ -129,13 +251,15 @@
             background: var(--accent); 
             border-radius: 2px;
             text-transform: uppercase;
+            width: fit-content;
         }
 
         h3 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
             margin: 0 0 16px 0;
             color: var(--accent);
+            letter-spacing: 0.02em;
         }
 
         p {
@@ -146,33 +270,10 @@
             font-weight: 300;
         }
 
-        .contact-block {
-            grid-column: 1 / -1;
-            padding: 80px 20px 60px;
-            text-align: center;
-        }
-
-        .cta-text { 
-            display: inline-block;
-            font-size: 20px; 
-            font-weight: 600; 
-            text-decoration: none; 
-            color: var(--accent);
-            background: var(--card-bg);
-            border: 2px solid var(--accent);
-            padding: 18px 45px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-text:hover { 
-            background: var(--accent); 
-            color: #ffffff;
-        }
-
         footer {
-            grid-column: 1 / -1;
-            padding: 40px 20px 80px;
+            padding: 80px 20px 60px; 
             text-align: center;
+            margin-top: auto;
         }
 
         .brand-url { 
@@ -193,68 +294,96 @@
         }
         
         @media (max-width: 900px) {
-            body { grid-template-columns: 1fr; }
-            header, .grid-item, .contact-block, footer { grid-column: 1; width: 100%; max-width: 100vw; }
-            header { padding: 60px 20px 40px; }
-            .grid-item { padding: 50px 25px; border-left: none; border-right: none; }
+            header { padding: 60px 20px 30px; }
+            .contact-block { padding: 0 20px 40px; } 
+            
+            .services-grid { 
+                grid-template-columns: 1fr; 
+                gap: 0; 
+                border-top: none;
+            }
+            .grid-item {
+                border-bottom: 1px solid var(--border);
+            }
+            .card-inner { padding: 50px 30px; }
+            .grid-item p { line-height: 1.7; }
+            
             .cta-text { font-size: 18px; padding: 16px 30px; width: 90%; max-width: 320px; }
-            .trust-tagline { font-size: 0.36em; padding: 0 5px; margin-top: 25px; line-height: 1.4; }
+            footer { padding: 60px 20px 50px; }
         }
     </style>
 </head>
 <body ontouchstart="">
 
     <header>
-        <h1>
-            <span class="brand-name">ZC Consulting LLC</span>
-            <span class="service-desc-line">Professional Technology</span>
-            <span class="service-desc-line">Consultation and Service</span>
-            <span class="trust-tagline">Industry-Certified Expertise.  Insured CT Business. Service You Can Trust.</span>
-        </h1>
+        <div class="title-wrapper">
+            <h1 class="brand-name">ZC Consulting LLC</h1>
+            <h2 class="service-desc-line">
+                Professional Technology<br>
+                Consultation and Service
+            </h2>
+            <p class="trust-tagline">Industry-Certified Expertise.  Insured CT Business. Service You Can Trust.</p>
+        </div>
     </header>
 
-    <div class="grid-item">
-        <span class="num">I</span>
-        <h3>Networking</h3>
-        <p>Professional network configuration ensures a fast, stable, and secure connection across devices. Optimizing your networked environment for maximum connectivity.</p>
-    </div>
-
-    <div class="grid-item">
-        <span class="num">II</span>
-        <h3>Security</h3>
-        <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
-    </div>
-
-    <div class="grid-item">
-        <span class="num">III</span>
-        <h3>Cloud</h3>
-        <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These resources are professionally managed to ensure your information is accessible and protected from any location.</p>
-    </div>
-
-    <div class="grid-item">
-        <span class="num">IV</span>
-        <h3>Support</h3>
-        <p>Professional technical assistance is available to resolve issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
-    </div>
-
-    <div class="grid-item">
-        <span class="num">V</span>
-        <h3>Training</h3>
-        <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This training focuses on helping you build the skills needed to navigate your digital tools.</p>
-    </div>
-
-    <div class="grid-item">
-        <span class="num">VI</span>
-        <h3>Upgrade</h3>
-        <p>System upgrades keep hardware and software performing at their peak. Staying current with the latest updates ensures longer compatibility, strengthens security, and improves your system performance.</p>
-    </div>
-
     <div class="contact-block">
-        <a href="mailto:contact@techct.com" class="cta-text">Schedule a Consultation</a>
+        <a href="mailto:contact@techct.com" class="cta-text">
+            Schedule a Consultation <span class="cta-arrow">&rarr;</span>
+        </a>
     </div>
+
+    <main class="services-grid">
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">I</span>
+                <h3>Networking</h3>
+                <p>Professional network configuration ensures a fast, stable, and secure connection across devices. Optimizing your networked environment for maximum connectivity.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">II</span>
+                <h3>Security</h3>
+                <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">III</span>
+                <h3>Cloud</h3>
+                <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These resources are professionally managed to ensure your information is accessible and protected from any location.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">IV</span>
+                <h3>Support</h3>
+                <p>Professional technical assistance is available to resolve issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">V</span>
+                <h3>Training</h3>
+                <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This training focuses on helping you build the skills needed to navigate your digital tools.</p>
+            </div>
+        </div>
+
+        <div class="grid-item" tabindex="0">
+            <div class="card-inner">
+                <span class="num">VI</span>
+                <h3>Upgrade</h3>
+                <p>System upgrades keep hardware and software performing at their peak. Staying current with the latest updates ensures longer compatibility, strengthens security, and improves your system performance.</p>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <a href="http://www.techct.com" class="brand-url">www.techct.com</a>
+        <a href="https://www.techct.com" class="brand-url">www.techct.com</a>
         <p class="copyright">
             &copy; <span id="year"></span> ZC Consulting LLC, Connecticut. All rights reserved.
         </p>
