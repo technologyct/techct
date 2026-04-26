@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZC Consulting LLC provides professional technology consultation, networking, security, cloud solutions, and IT support for businesses in Connecticut.">
     <title>ZC Consulting LLC | Professional Technology Consultation</title>
     
     <!-- High-Performance Font Delivery -->
@@ -18,7 +19,7 @@
             --sub: #555555;       
             --accent: #2c3e50;    
             --hover-bg: #1a252f;  
-            --url-color: #7f8c8d; 
+            --url-color: #5b696a; 
             --border: #e0e0e0;    
         }
 
@@ -27,30 +28,48 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html, body {
+        html {
             margin: 0;
             padding: 0;
-            width: 100%;
-            overflow-x: hidden; 
             background-color: var(--bg);
-            /* RAZOR SHARP: Forces the browser to prioritize text clarity */
+            /* FIX 1: Forces vertical scrollbar to always show, preventing center-aligned text from jumping */
+            overflow-y: scroll; 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
         }
 
         body {
+            margin: 0;
+            padding: 0;
+            /* FIX 2: Removed width: 100%; to allow natural flow without scrollbar conflicts */
+            overflow-x: hidden; 
             color: var(--text);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .page-wrapper {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            animation: fadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            min-height: 100dvh; 
+            /* FIX 3: Pure opacity fade. Removes the Y-axis slide to prevent the sub-pixel GPU snap upon completion */
+            animation: fadeIn 0.8s ease-in-out both; 
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-wrapper {
+                animation: none !important;
+                opacity: 1 !important;
+            }
+            .card-inner, .cta-text, .cta-arrow {
+                transition-duration: 0.01ms !important;
+            }
         }
 
         header {
@@ -77,7 +96,7 @@
         }
 
         h2.service-desc-line {
-            font-size: 0.42em;
+            font-size: clamp(1rem, 2vw, 1.6rem); 
             font-weight: 400;
             margin: 0;
             color: var(--text); 
@@ -88,7 +107,7 @@
         }
 
         p.trust-tagline {
-            font-size: 0.32em;
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
             font-weight: 600;
             margin: 30px 0 0 0;
             color: var(--accent);
@@ -116,6 +135,7 @@
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
                         background 0.3s ease, 
                         box-shadow 0.3s ease;
+            will-change: transform;
         }
 
         .cta-arrow {
@@ -138,16 +158,11 @@
             transform: translateX(6px);
         }
 
-        /* Keyboard Accessibility - CTA Button */
         .cta-text:focus-visible {
             outline: 3px dashed var(--accent);
             outline-offset: 4px;
         }
 
-        /* 
-           FLICKER-FREE GRID ARCHITECTURE
-           Using gap: 1px as a hardware-stable divider.
-        */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -162,9 +177,7 @@
         .grid-item {
             position: relative;
             background: var(--bg);
-            cursor: pointer;
             user-select: none;
-            /* Sticky Z-index logic: stays on top for 0.4s during return animation */
             transition: z-index 0s linear 0.4s; 
             z-index: 1;
         }
@@ -177,23 +190,21 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            /* Pure Y-axis transform keeps text strictly vector and razor-sharp */
             transform: translateY(0);
             transition: 
                 transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 background 0.3s ease;
+            will-change: transform, box-shadow;
         }
 
         .card-inner h3, .card-inner p, .card-inner .num {
             transition: color 0.3s ease;
         }
 
-        /* DESKTOP HOVER - High Fidelity Lift */
         @media (hover: hover) {
             .grid-item:hover {
                 z-index: 10;
-                /* Removes the sticky delay on entry for instant reaction */
                 transition: z-index 0s linear 0s; 
             }
             .grid-item:hover .card-inner { 
@@ -211,7 +222,6 @@
             }
         }
 
-        /* MOBILE TOUCH - Snappy, Tactile, and Scroll-Safe */
         .grid-item:active {
             z-index: 10;
             transition: z-index 0s linear 0s;
@@ -224,20 +234,6 @@
         }
         .grid-item:active h3, .grid-item:active p { color: #ffffff; }
         .grid-item:active .num { background: #ffffff; color: var(--hover-bg); }
-
-        /* Keyboard Accessibility - Grid Cards */
-        .grid-item:focus-visible {
-            outline: none; 
-            z-index: 10;
-        }
-        .grid-item:focus-visible .card-inner {
-            background: var(--hover-bg);
-            transform: translateY(-8px);
-            outline: 3px solid var(--accent);
-            outline-offset: -3px;
-        }
-        .grid-item:focus-visible h3, .grid-item:focus-visible p { color: #ffffff; }
-        .grid-item:focus-visible .num { background: #ffffff; color: var(--hover-bg); }
 
         .num {
             font-family: 'Cormorant Garamond', serif;
@@ -305,6 +301,9 @@
             .grid-item {
                 border-bottom: 1px solid var(--border);
             }
+            .grid-item:last-child {
+                border-bottom: none;
+            }
             .card-inner { padding: 50px 30px; }
             .grid-item p { line-height: 1.7; }
             
@@ -313,84 +312,87 @@
         }
     </style>
 </head>
-<body ontouchstart="">
+<body>
 
-    <header>
-        <div class="title-wrapper">
-            <h1 class="brand-name">ZC Consulting LLC</h1>
-            <h2 class="service-desc-line">
-                Professional Technology<br>
-                Consultation and Service
-            </h2>
-            <p class="trust-tagline">Industry-Certified Expertise.  Insured CT Business. Service You Can Trust.</p>
+    <div class="page-wrapper">
+        <header>
+            <div class="title-wrapper">
+                <h1 class="brand-name">ZC Consulting LLC</h1>
+                <h2 class="service-desc-line">
+                    Professional Technology<br>
+                    Consultation and Service
+                </h2>
+                <p class="trust-tagline">Industry-Certified Expertise.  Insured CT Business. Service You Can Trust.</p>
+            </div>
+        </header>
+
+        <div class="contact-block">
+            <a href="mailto:contact@techct.com" class="cta-text">
+                Schedule a Consultation <span class="cta-arrow">&rarr;</span>
+            </a>
         </div>
-    </header>
 
-    <div class="contact-block">
-        <a href="mailto:contact@techct.com" class="cta-text">
-            Schedule a Consultation <span class="cta-arrow">&rarr;</span>
-        </a>
+        <main class="services-grid">
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">I</span>
+                    <h3>Networking</h3>
+                    <p>Professional network configuration ensures a fast, stable, and secure connection across devices. Optimizing your networked environment for maximum connectivity.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">II</span>
+                    <h3>Security</h3>
+                    <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">III</span>
+                    <h3>Cloud</h3>
+                    <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These resources are professionally managed to ensure your information is accessible and protected from any location.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">IV</span>
+                    <h3>Support</h3>
+                    <p>Professional technical assistance is available to resolve issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">V</span>
+                    <h3>Training</h3>
+                    <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This training focuses on helping you build the skills needed to navigate your digital tools.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="card-inner">
+                    <span class="num">VI</span>
+                    <h3>Upgrade</h3>
+                    <p>System upgrades keep hardware and software performing at their peak. Staying current with the latest updates ensures longer compatibility, strengthens security, and improves your system performance.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.techct.com" class="brand-url">www.techct.com</a>
+            <p class="copyright">
+                &copy; <span id="year"></span> ZC Consulting LLC, Connecticut. All rights reserved.
+            </p>
+        </footer>
     </div>
-
-    <main class="services-grid">
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">I</span>
-                <h3>Networking</h3>
-                <p>Professional network configuration ensures a fast, stable, and secure connection across devices. Optimizing your networked environment for maximum connectivity.</p>
-            </div>
-        </div>
-
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">II</span>
-                <h3>Security</h3>
-                <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
-            </div>
-        </div>
-
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">III</span>
-                <h3>Cloud</h3>
-                <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These resources are professionally managed to ensure your information is accessible and protected from any location.</p>
-            </div>
-        </div>
-
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">IV</span>
-                <h3>Support</h3>
-                <p>Professional technical assistance is available to resolve issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
-            </div>
-        </div>
-
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">V</span>
-                <h3>Training</h3>
-                <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This training focuses on helping you build the skills needed to navigate your digital tools.</p>
-            </div>
-        </div>
-
-        <div class="grid-item" tabindex="0">
-            <div class="card-inner">
-                <span class="num">VI</span>
-                <h3>Upgrade</h3>
-                <p>System upgrades keep hardware and software performing at their peak. Staying current with the latest updates ensures longer compatibility, strengthens security, and improves your system performance.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <a href="https://www.techct.com" class="brand-url">www.techct.com</a>
-        <p class="copyright">
-            &copy; <span id="year"></span> ZC Consulting LLC, Connecticut. All rights reserved.
-        </p>
-    </footer>
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+        document.addEventListener("touchstart", function() {}, {passive: true});
     </script>
 
 </body>
