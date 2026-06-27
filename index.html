@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1b2a4a">
 <title>ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut</title>
 <meta name="description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Network security, incident response, cloud backup, and tech support for homes and businesses. Serving CT locally and clients nationwide.">
@@ -67,7 +67,16 @@
     --text: #1b2a4a;
   }
 
-  html { scroll-behavior: smooth; }
+  html { 
+    scroll-behavior: smooth; 
+    /* Fixes anchor link scroll offset beneath fixed 60px header */
+    scroll-margin-top: 60px; 
+  }
+
+  /* Apply scroll-margin directly to section landing points */
+  section {
+    scroll-margin-top: 60px;
+  }
 
   body {
     font-family: 'Jost', sans-serif;
@@ -83,6 +92,9 @@
     background: rgba(27, 42, 74, 0.97);
     backdrop-filter: blur(6px);
     padding: 0 2.5rem;
+    /* Keeps menu items safe from display notches in landscape orientation */
+    padding-left: calc(2.5rem + env(safe-area-inset-left));
+    padding-right: calc(2.5rem + env(safe-area-inset-right));
     height: 60px;
     display: flex;
     align-items: center;
@@ -298,7 +310,7 @@
     gap: 0;
     border-top: 1px solid var(--gray-light);
     padding: 2rem 1rem;
-    margin: 0 -1rem; /* Adjusts width to perfectly fit hover containers */
+    margin: 0 -1rem;
     transition: background-color 0.25s ease, border-color 0.25s ease;
   }
 
@@ -320,7 +332,7 @@
     border-radius: 2px;
     flex-shrink: 0;
     margin-top: 0.2rem;
-    border: 1px solid transparent; /* Anti-shakedown layout guard */
+    border: 1px solid transparent;
     transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   }
 
@@ -359,7 +371,6 @@
     border-radius: 2px;
   }
 
-  /* Premium Interaction Layer (Isolated from touch screen double-tap bug) */
   @media (hover: hover) {
     .service-block:hover {
       background-color: var(--off-white);
@@ -595,6 +606,8 @@
   @media (max-width: 640px) {
     nav {
       padding: 0 1.5rem;
+      padding-left: calc(1.5rem + env(safe-area-inset-left));
+      padding-right: calc(1.5rem + env(safe-area-inset-right));
     }
 
     .nav-toggle-label {
