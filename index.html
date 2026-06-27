@@ -13,6 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet">
 
 <meta property="og:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
 <meta property="og:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
@@ -53,8 +54,6 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap&font-display=swap');
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -298,7 +297,9 @@
     grid-template-columns: 80px 1fr;
     gap: 0;
     border-top: 1px solid var(--gray-light);
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    margin: 0 -1rem; /* Adjusts width to perfectly fit hover containers */
+    transition: background-color 0.25s ease, border-color 0.25s ease;
   }
 
   .service-block:last-child {
@@ -319,6 +320,8 @@
     border-radius: 2px;
     flex-shrink: 0;
     margin-top: 0.2rem;
+    border: 1px solid transparent; /* Anti-shakedown layout guard */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   }
 
   .service-content h3 {
@@ -354,6 +357,23 @@
     border: 1px solid var(--gray-light);
     padding: 0.2rem 0.6rem;
     border-radius: 2px;
+  }
+
+  /* Premium Interaction Layer (Isolated from touch screen double-tap bug) */
+  @media (hover: hover) {
+    .service-block:hover {
+      background-color: var(--off-white);
+      border-color: var(--navy-light);
+    }
+    .service-block:hover .roman-badge {
+      background-color: var(--white);
+      color: var(--navy);
+      border-color: var(--navy-light);
+      transform: scale(1.06);
+    }
+    .service-block:hover .service-content h3 {
+      color: var(--navy-light);
+    }
   }
 
   .about-strip {
@@ -571,6 +591,7 @@
 
   footer a:hover { color: var(--white); }
 
+  /* Responsive Mobile UI Execution Layer */
   @media (max-width: 640px) {
     nav {
       padding: 0 1.5rem;
@@ -628,6 +649,7 @@
       padding: 1rem;
     }
 
+    /* Solves iOS input focused-zoom & establishes correct touch target limits */
     .contact-form input,
     .contact-form textarea {
       font-size: 1rem;
@@ -658,7 +680,7 @@
     }
 
     .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .service-block { grid-template-columns: 60px 1fr; }
+    .service-block { grid-template-columns: 60px 1fr; padding: 2rem 0; margin: 0; }
     .form-row { grid-template-columns: 1fr; gap: 1rem; }
     footer { flex-direction: column; text-align: center; }
   }
@@ -686,177 +708,178 @@
   </ul>
 </nav>
 
-<section class="hero">
-  <h1>ZC Consulting LLC</h1>
-  <p class="hero-tagline">Professional Technology Consultation</p>
-  <p class="hero-local">Providing Local and Remote Technology Services</p>
-  <div class="hero-divider"></div>
-  <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
-  <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
-</section>
+<main>
+  <section class="hero">
+    <h1>ZC Consulting LLC</h1>
+    <p class="hero-tagline">Professional Technology Consultation</p>
+    <p class="hero-local">Providing Local and Remote Technology Services</p>
+    <div class="hero-divider"></div>
+    <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
+    <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
+  </section>
 
-<section class="trust-strip">
-  <div class="trust-container">
-    <div class="hero-badges">
-      <span class="badge">Computer Networking</span>
-      <span class="badge">Troubleshooting</span>
-      <span class="badge">Cybersecurity &amp; Privacy</span>
-      <span class="badge">Cloud &amp; Backups</span>
-      <span class="badge">Hardware &amp; Upgrades</span>
-      <span class="badge">Technology Training</span>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="section-header">
-    <h2>Services</h2>
-  </div>
-
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>I</em></div>
-    <div class="service-content">
-      <h3>Networking</h3>
-      <p>Professional network configuration provides a fast, stable, and secure connection across all your devices. Built to modern standards and optimized for performance, we deliver maximum connectivity for your digital environment.</p>
-      <div class="service-tags">
-        <span class="service-tag">Wi-Fi Optimization</span>
-        <span class="service-tag">Smart Home / Office</span>
-        <span class="service-tag">Network Security</span>
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="hero-badges">
+        <span class="badge">Computer Networking</span>
+        <span class="badge">Troubleshooting</span>
+        <span class="badge">Cybersecurity &amp; Privacy</span>
+        <span class="badge">Cloud &amp; Backups</span>
+        <span class="badge">Hardware &amp; Upgrades</span>
+        <span class="badge">Technology Training</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>II</em></div>
-    <div class="service-content">
-      <h3>Security</h3>
-      <p>Proactive security audits and threat assessments identify and resolve vulnerabilities before they can be exploited. We secure your personal identity, private data, and devices with advanced threat protection.</p>
-      <div class="service-tags">
-        <span class="service-tag">Device Hardening</span>
-        <span class="service-tag">Identity Protection</span>
-        <span class="service-tag">Threat Defense</span>
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>Services</h2>
+    </div>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>I</em></div>
+      <div class="service-content">
+        <h3>Networking</h3>
+        <p>Professional network configuration provides a fast, stable, and secure connection across all your devices. Built to modern standards and optimized for performance, we deliver maximum connectivity for your digital environment.</p>
+        <div class="service-tags">
+          <span class="service-tag">Wi-Fi Optimization</span>
+          <span class="service-tag">Smart Home / Office</span>
+          <span class="service-tag">Network Security</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>II</em></div>
+      <div class="service-content">
+        <h3>Security</h3>
+        <p>Proactive security audits and threat assessments identify and resolve vulnerabilities before they can be exploited. We secure your personal identity, private data, and devices with advanced threat protection.</p>
+        <div class="service-tags">
+          <span class="service-tag">Device Hardening</span>
+          <span class="service-tag">Identity Protection</span>
+          <span class="service-tag">Threat Defense</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>III</em></div>
+      <div class="service-content">
+        <h3>Cloud &amp; Backup</h3>
+        <p>We provide tailored cloud solutions for secure, offsite storage and reliable data backup. These resources are professionally managed to ensure your personal and business data is accessible and protected from any location.</p>
+        <div class="service-tags">
+          <span class="service-tag">Secure Backup</span>
+          <span class="service-tag">Anywhere Access</span>
+          <span class="service-tag">Protected Offline Storage</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>IV</em></div>
+      <div class="service-content">
+        <h3>Support</h3>
+        <p>Professional technical assistance is available to eliminate downtime and resolve issues quickly. Our dedicated support ensures your technology is working when you need it.</p>
+        <div class="service-tags">
+          <span class="service-tag">Rapid Response</span>
+          <span class="service-tag">Device Management</span>
+          <span class="service-tag">Smart Tech Help</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>V</em></div>
+      <div class="service-content">
+        <h3>Training</h3>
+        <p>We offer personalized, one-on-one sessions designed to help you master new technologies at your own pace. From general use to advanced assistance, build the skills you need to navigate your digital tools.</p>
+        <div class="service-tags">
+          <span class="service-tag">Tech Navigation</span>
+          <span class="service-tag">Skill Building</span>
+          <span class="service-tag">One-on-One Sessions</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>VI</em></div>
+      <div class="service-content">
+        <h3>Upgrade</h3>
+        <p>We keep hardware and software current, compatible, and secure. Strategic upgrades protect your technology investments, eliminate vulnerabilities from outdated systems, and ensure your systems run at peak performance.</p>
+        <div class="service-tags">
+          <span class="service-tag">Hardware Refresh</span>
+          <span class="service-tag">System Migrations</span>
+          <span class="service-tag">Software Updates</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="about-strip" id="about">
+    <div class="about-inner">
+      <div>
+        <h2>You get the specialist.<br>Not a help desk ticket.</h2>
+        <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
+      </div>
+      <div>
+        <h3 class="cred-header">Credentials</h3>
+        <ul class="cred-list">
+          <li class="cred-item">
+            <span class="cred-num">I</span>
+            <div class="cred-text">
+              <strong>CompTIA Security+ Certified</strong>
+              <span>Active Certification · Industry standard for Cybersecurity</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">II</span>
+            <div class="cred-text">
+              <strong>CompTIA Network+ Certified</strong>
+              <span>Active Certification · Industry Standard for Computer Networking</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">III</span>
+            <div class="cred-text">
+              <strong>20+ Years Enterprise IT</strong>
+              <span>Systems Engineering · Cybersecurity · Technology Support</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">IV</span>
+            <div class="cred-text">
+              <strong>Insured Connecticut LLC</strong>
+              <span>Fully Insured · Local Business · Onsite and Remote Support</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>III</em></div>
-    <div class="service-content">
-      <h3>Cloud &amp; Backup</h3>
-      <p>We provide tailored cloud solutions for secure, offsite storage and reliable data backup. These resources are professionally managed to ensure your personal and business data is accessible and protected from any location.</p>
-      <div class="service-tags">
-        <span class="service-tag">Secure Backup</span>
-        <span class="service-tag">Anywhere Access</span>
-        <span class="service-tag">Protected Offline Storage</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>IV</em></div>
-    <div class="service-content">
-      <h3>Support</h3>
-      <p>Professional technical assistance is available to eliminate downtime and resolve issues quickly. Our dedicated support ensures your technology is working when you need it.</p>
-      <div class="service-tags">
-        <span class="service-tag">Rapid Response</span>
-        <span class="service-tag">Device Management</span>
-        <span class="service-tag">Smart Tech Help</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>V</em></div>
-    <div class="service-content">
-      <h3>Training</h3>
-      <p>We offer personalized, one-on-one sessions designed to help you master new technologies at your own pace. From general use to advanced assistance, build the skills you need to navigate your digital tools.</p>
-      <div class="service-tags">
-        <span class="service-tag">Tech Navigation</span>
-        <span class="service-tag">Skill Building</span>
-        <span class="service-tag">One-on-One Sessions</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-block">
-    <div class="roman-badge" aria-hidden="true"><em>VI</em></div>
-    <div class="service-content">
-      <h3>Upgrade</h3>
-      <p>We keep hardware and software current, compatible, and secure. Strategic upgrades protect your technology investments, eliminate vulnerabilities from outdated systems, and ensure your systems run at peak performance.</p>
-      <div class="service-tags">
-        <span class="service-tag">Hardware Refresh</span>
-        <span class="service-tag">System Migrations</span>
-        <span class="service-tag">Software Updates</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about-strip" id="about">
-  <div class="about-inner">
-    <div>
-      <h2>You get the specialist.<br>Not a help desk ticket.</h2>
-      <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
-    </div>
-    <div>
-      <h3 class="cred-header">Credentials</h3>
-      <ul class="cred-list">
-        <li class="cred-item">
-          <span class="cred-num">I</span>
-          <div class="cred-text">
-            <strong>CompTIA Security+ Certified</strong>
-            <span>Active Certification · Industry standard for Cybersecurity</span>
-          </div>
-        </li>
-        <li class="cred-item">
-          <span class="cred-num">II</span>
-          <div class="cred-text">
-            <strong>CompTIA Network+ Certified</strong>
-            <span>Active Certification · Industry Standard for Computer Networking</span>
-          </div>
-        </li>
-        <li class="cred-item">
-          <span class="cred-num">III</span>
-          <div class="cred-text">
-            <strong>20+ Years Enterprise IT</strong>
-            <span>Systems Engineering · Cybersecurity · Technology Support</span>
-          </div>
-        </li>
-        <li class="cred-item">
-          <span class="cred-num">IV</span>
-          <div class="cred-text">
-            <strong>Insured Connecticut LLC</strong>
-            <span>Fully Insured · Local Business · Onsite and Remote Support</span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section" id="contact">
-  <h2>Let's discuss your technology needs.</h2>
-  <p>Submit your inquiry below or contact ZC Consulting directly.</p>
-  
-  <form class="contact-form" action="https://splitforms.com/api/submit" method="POST">
-    <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
+  <section class="cta-section" id="contact">
+    <h2>Let's discuss your technology needs.</h2>
+    <p>Submit your inquiry below or contact ZC Consulting directly.</p>
     
-    <input type="hidden" name="subject" value="New Inquiry from techct.com">
-    
-    <input type="checkbox" name="botcheck" style="display: none;">
+    <form class="contact-form" action="https://splitforms.com/api/submit" method="POST">
+      <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
+      <input type="hidden" name="subject" value="New Inquiry from techct.com">
+      
+      <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" aria-hidden="true" autocomplete="off">
 
-    <div class="form-row">
-      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" autocomplete="name">
-      <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" autocomplete="name">
+        <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
+      </div>
+      <textarea name="message" rows="4" placeholder="How can ZC Consulting help you?" required aria-label="Inquiry Message" autocomplete="off"></textarea>
+      <button type="submit" class="cta-btn">Submit Inquiry &rarr;</button>
+    </form>
+
+    <div class="direct-contact">
+      <p class="cta-note">Email directly: <a href="mailto:contact@techct.com" class="contact-email">contact@techct.com</a></p>
     </div>
-    <textarea name="message" rows="4" placeholder="How can ZC Consulting help you?" required aria-label="Inquiry Message" autocomplete="off"></textarea>
-    <button type="submit" class="cta-btn">Submit Inquiry &rarr;</button>
-  </form>
-
-  <div class="direct-contact">
-    <p class="cta-note">Email directly: <a href="mailto:contact@techct.com" class="contact-email">contact@techct.com</a></p>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
@@ -877,11 +900,10 @@
   // Updated Form submission feedback logic
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function() {
       const btn = form.querySelector('.cta-btn');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      // Stays disabled and reads 'Sending...' cleanly until the browser finishes redirecting to the success screen
     });
   }
 </script>
