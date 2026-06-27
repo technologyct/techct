@@ -1,399 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZC Consulting LLC provides professional technology consultation, networking, security, cloud solutions, and IT support for businesses in Connecticut.">
-    <title>ZC Consulting LLC | Professional Technology Consultation</title>
-    
-    <!-- High-Performance Font Delivery -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #f2f2f2;        
-            --card-bg: #ffffff;   
-            --text: #1a1a1a;      
-            --sub: #555555;       
-            --accent: #2c3e50;    
-            --hover-bg: #1a252f;  
-            --url-color: #5b696a; 
-            --border: #e0e0e0;    
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1b2a4a">
+<title>ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut</title>
+<meta name="description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Network security, incident response, cloud backup, and tech support for homes and businesses. Serving CT locally and clients nationwide.">
+<meta name="keywords" content="IT Consulting Connecticut, Cybersecurity Consultant CT, Network Security Connecticut, Small Business IT Support CT, Cloud Backup Connecticut, CompTIA Security Plus, ZC Consulting LLC, techct.com">
+<meta name="author" content="ZC Consulting LLC">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.techct.com/">
 
-        * {
-            box-sizing: border-box; 
-            -webkit-tap-highlight-color: transparent;
-        }
+<!-- Preconnect for faster Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            /* FIX 1: Forces vertical scrollbar to always show, preventing center-aligned text from jumping */
-            overflow-y: scroll; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
+<!-- Open Graph -->
+<meta property="og:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
+<meta property="og:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.techct.com/">
+<meta property="og:image" content="https://www.techct.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="ZC Consulting LLC">
 
-        body {
-            margin: 0;
-            padding: 0;
-            /* FIX 2: Removed width: 100%; to allow natural flow without scrollbar conflicts */
-            overflow-x: hidden; 
-            color: var(--text);
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
+<meta name="twitter:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
+<meta name="twitter:image" content="https://www.techct.com/assets/og-image.png">
 
-        .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            min-height: 100dvh; 
-            /* FIX 3: Pure opacity fade. Removes the Y-axis slide to prevent the sub-pixel GPU snap upon completion */
-            animation: fadeIn 0.8s ease-in-out both; 
-        }
+<!-- Local Business Schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ZC Consulting LLC",
+  "description": "Connecticut-based cybersecurity and IT consulting firm. CompTIA Security+ and Network+ certified. Providing network security, incident response, cloud backup, and technology support for homes and businesses.",
+  "url": "https://www.techct.com",
+  "email": "contact@techct.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "CT",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "State", "name": "Connecticut"},
+    {"@type": "Country", "name": "United States"}
+  ],
+  "serviceType": ["Cybersecurity Consulting", "IT Consulting", "Network Security", "Cloud Backup", "Technology Training", "Hardware Upgrade"],
+  "knowsAbout": ["Cybersecurity", "Network Security", "CompTIA Security+", "CompTIA Network+", "Cloud Computing", "IT Support"],
+  "hasCredential": ["CompTIA Security+", "CompTIA Network+"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-17:00"
+}
+</script>
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap&font-display=swap');
 
-        @media (prefers-reduced-motion: reduce) {
-            .page-wrapper {
-                animation: none !important;
-                opacity: 1 !important;
-            }
-            .card-inner, .cta-text, .cta-arrow {
-                transition-duration: 0.01ms !important;
-            }
-        }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        header {
-            padding: 100px 20px 50px; 
-            text-align: center;
-        }
+  :root {
+    --navy: #1b2a4a;
+    --navy-dark: #111e35;
+    --navy-light: #243558;
+    --white: #ffffff;
+    --off-white: #f5f6f8;
+    --gray-light: #e8eaee;
+    /* High contrast compliance: changed from #7a8499 to #4e586c */
+    --gray: #4e586c;
+    --text: #1b2a4a;
+  }
 
-        .title-wrapper {
-            font-size: clamp(2.2rem, 8vw, 3.8rem);
-            font-weight: 700; 
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  html { scroll-behavior: smooth; }
 
-        h1.brand-name {
-            font-size: 1em;
-            display: inline-block; 
-            margin: 0 0 24px 0;
-            color: var(--accent); 
-            border-bottom: 4px solid var(--accent); 
-            padding-bottom: 4px;
-        }
+  body {
+    font-family: 'Jost', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+  }
 
-        h2.service-desc-line {
-            font-size: clamp(1rem, 2vw, 1.6rem); 
-            font-weight: 400;
-            margin: 0;
-            color: var(--text); 
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
+  /* Navigation Layout & CSS Menu */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(27, 42, 74, 0.97);
+    backdrop-filter: blur(6px);
+    padding: 0 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-        p.trust-tagline {
-            font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
-            font-weight: 600;
-            margin: 30px 0 0 0;
-            color: var(--accent);
-            font-style: italic;
-            letter-spacing: 0.05em;
-        }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
 
-        .contact-block {
-            padding: 0 20px 60px; 
-            text-align: center;
-        }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
 
-        .cta-text { 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            font-size: 20px; 
-            font-weight: 600; 
-            text-decoration: none; 
-            color: var(--accent);
-            background: var(--card-bg);
-            border: 2px solid var(--accent);
-            padding: 18px 45px;
-            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        background 0.3s ease, 
-                        box-shadow 0.3s ease;
-            will-change: transform;
-        }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
 
-        .cta-arrow {
-            display: inline-block;
-            font-size: 1.25em; 
-            transition: transform 0.3s ease;
-            line-height: 1;
-            vertical-align: middle;
-            margin-top: -2px;
-        }
+  .nav-links a:hover { color: var(--white); }
 
-        .cta-text:hover { 
-            background: var(--accent); 
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
+  .nav-links .nav-cta {
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 0.35rem 1rem;
+    border-radius: 2px;
+    transition: background 0.2s, border-color 0.2s;
+  }
 
-        .cta-text:hover .cta-arrow {
-            transform: translateX(6px);
-        }
+  .nav-links .nav-cta:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+  }
 
-        .cta-text:focus-visible {
-            outline: 3px dashed var(--accent);
-            outline-offset: 4px;
-        }
+  /* Responsive Mobile Menu Toggle (Pure CSS, 0 JS) */
+  .nav-toggle {
+    display: none;
+  }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            width: 100%;
-            background: var(--border);
-            gap: 1px; 
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            isolation: isolate; 
-        }
+  .nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
 
-        .grid-item {
-            position: relative;
-            background: var(--bg);
-            user-select: none;
-            transition: z-index 0s linear 0.4s; 
-            z-index: 1;
-        }
+  .nav-toggle-label span {
+    display: block;
+    background: var(--white);
+    height: 2px;
+    width: 22px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
 
-        .card-inner {
-            padding: 80px 50px;
-            height: 100%;
-            width: 100%;
-            background: var(--card-bg);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transform: translateY(0);
-            transition: 
-                transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                background 0.3s ease;
-            will-change: transform, box-shadow;
-        }
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: var(--white);
+    height: 2px;
+    width: 22px;
+    transition: all 0.2s ease-in-out;
+  }
 
-        .card-inner h3, .card-inner p, .card-inner .num {
-            transition: color 0.3s ease;
-        }
+  .nav-toggle-label span::before { top: -6px; }
+  .nav-toggle-label span::after { top: 6px; }
 
-        @media (hover: hover) {
-            .grid-item:hover {
-                z-index: 10;
-                transition: z-index 0s linear 0s; 
-            }
-            .grid-item:hover .card-inner { 
-                background: var(--hover-bg);
-                transform: translateY(-16px);
-                box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-            }
-            .grid-item:hover h3, .grid-item:hover p { 
-                color: #ffffff; 
-                -webkit-font-smoothing: subpixel-antialiased; 
-            }
-            .grid-item:hover .num { 
-                background: #ffffff; 
-                color: var(--hover-bg); 
-            }
-        }
+  /* Hero Section Styling */
+  .hero {
+    min-height: 85vh;
+    background: var(--off-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 2rem 5rem;
+    position: relative;
+  }
 
-        .grid-item:active {
-            z-index: 10;
-            transition: z-index 0s linear 0s;
-        }
-        .grid-item:active .card-inner {
-            background: var(--hover-bg);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            transition: all 0.1s ease; 
-        }
-        .grid-item:active h3, .grid-item:active p { color: #ffffff; }
-        .grid-item:active .num { background: #ffffff; color: var(--hover-bg); }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+  }
 
-        .num {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 18px; 
-            font-weight: 600;
-            color: #ffffff; 
-            display: inline-block;
-            margin-bottom: 24px;
-            padding: 2px 16px;
-            background: var(--accent); 
-            border-radius: 2px;
-            text-transform: uppercase;
-            width: fit-content;
-        }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
 
-        h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 16px 0;
-            color: var(--accent);
-            letter-spacing: 0.02em;
-        }
+  .hero-local {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    color: var(--navy);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--sub);
-            margin: 0;
-            font-weight: 300;
-        }
+  .hero-divider {
+    display: none;
+  }
 
-        footer {
-            padding: 80px 20px 60px; 
-            text-align: center;
-            margin-top: auto;
-        }
+  .hero-trust {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 2rem;
+  }
 
-        .brand-url { 
-            display: block;
-            font-size: 13px; 
-            font-weight: 600; 
-            letter-spacing: 0.4em; 
-            color: var(--url-color); 
-            text-transform: uppercase;
-            text-decoration: none;
-            margin-bottom: 15px;
-        }
+  .hero-cta {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
 
-        .copyright {
-            font-size: 12px;
-            color: var(--sub);
-            opacity: 0.7;
-        }
-        
-        @media (max-width: 900px) {
-            header { padding: 60px 20px 30px; }
-            .contact-block { padding: 0 20px 40px; } 
-            
-            .services-grid { 
-                grid-template-columns: 1fr; 
-                gap: 0; 
-                border-top: none;
-            }
-            .grid-item {
-                border-bottom: 1px solid var(--border);
-            }
-            .grid-item:last-child {
-                border-bottom: none;
-            }
-            .card-inner { padding: 50px 30px; }
-            .grid-item p { line-height: 1.7; }
-            
-            .cta-text { font-size: 18px; padding: 16px 30px; width: 90%; max-width: 320px; }
-            footer { padding: 60px 20px 50px; }
-        }
-    </style>
+  .hero-cta:hover { background: var(--navy-light); }
+
+  /* Trust & Badges Strip */
+  .trust-strip {
+    background: var(--white);
+    border-top: none;
+    border-bottom: none;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .trust-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .trust-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .badge {
+    background: var(--off-white);
+    border: 1px solid var(--gray-light);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2px;
+  }
+
+  /* Services Layout */
+  .services {
+    padding: 2rem 2rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+
+  .service-block {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border-top: 1px solid var(--gray-light);
+    padding: 2rem 0;
+  }
+
+  .service-block:last-child {
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .roman-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .service-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .service-content p {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .service-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--off-white);
+    border: 1px solid var(--gray-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  /* About Strip */
+  .about-strip {
+    background: var(--navy-dark);
+    padding: 5rem 2rem;
+  }
+
+  .about-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  .about-inner p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+  }
+
+  .cred-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .cred-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cred-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .cred-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.25);
+    line-height: 1;
+    min-width: 2rem;
+    padding-top: 0.1rem;
+  }
+
+  .cred-text strong {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .cred-text span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* Contact & CTA Section with Elegant Form Structure */
+  .cta-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: var(--off-white);
+    border-top: 1px solid var(--gray-light);
+  }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-section p {
+    font-size: 0.88rem;
+    color: var(--gray);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.75;
+  }
+
+  .contact-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 1rem 2.75rem;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-btn:hover { background: var(--navy-light); }
+
+  .direct-contact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-light);
+    display: inline-block;
+  }
+
+  .cta-note {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-email {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed var(--navy);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-email:hover {
+    color: var(--navy-light);
+    border-bottom-color: var(--navy-light);
+  }
+
+  footer {
+    background: var(--navy-dark);
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  /* Mobile Responsive Overrides */
+  @media (max-width: 640px) {
+    /* Responsive Navigation Layout Styling */
+    nav {
+      padding: 0 1.5rem;
+    }
+
+    .nav-toggle-label {
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(17, 30, 53, 0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      gap: 1rem;
+      text-align: center;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.25s ease-in-out;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .nav-links li { width: 100%; }
+
+    .nav-links a {
+      display: block;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links .nav-cta {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* Hero mobile fixes */
+    .hero {
+      min-height: auto;
+      padding: 90px 1.5rem 3rem;
+    }
+
+    .hero-trust {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Form touch targets */
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1rem; /* Prevents iOS zoom on focus */
+      min-height: 48px;
+    }
+
+    .cta-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Menu Opening Logic (Strictly CSS-based) */
+    .nav-toggle:checked ~ .nav-links {
+      transform: scaleY(1);
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span {
+      background: transparent;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .service-block { grid-template-columns: 60px 1fr; }
+    .form-row { grid-template-columns: 1fr; gap: 1rem; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  @media (min-width: 641px) {
+    .nav-links {
+      transform: none !important;
+      display: flex !important;
+    }
+  }
+</style>
 </head>
 <body>
 
-    <div class="page-wrapper">
-        <header>
-            <div class="title-wrapper">
-                <h1 class="brand-name">ZC Consulting LLC</h1>
-                <h2 class="service-desc-line">
-                    Professional Technology<br>
-                    Consultation and Service
-                </h2>
-                <p class="trust-tagline">Industry-Certified Expertise.  Insured CT Business. Service You Can Trust.</p>
-            </div>
-        </header>
+<nav>
+  <div class="nav-logo">ZC Consulting LLC</div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
 
-        <div class="contact-block">
-            <a href="mailto:contact@techct.com" class="cta-text">
-                Schedule a Consultation <span class="cta-arrow">&rarr;</span>
-            </a>
-        </div>
+<section class="hero">
+  <h1>ZC Consulting LLC</h1>
+  <!-- Streamlined Tagline and inclusive subhead implemented here -->
+  <p class="hero-tagline">Professional Technology Consultation</p>
+  <p class="hero-local">Providing Local and Remote Technology Services</p>
+  <div class="hero-divider"></div>
+  <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
+  <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
+</section>
 
-        <main class="services-grid">
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">I</span>
-                    <h3>Networking</h3>
-                    <p>Professional network configuration ensures a fast, stable, and secure connection across devices. Optimizing your networked environment for maximum connectivity.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">II</span>
-                    <h3>Security</h3>
-                    <p>Comprehensive auditing and proactive assessments identify vulnerabilities to keep your systems thoroughly protected. Advanced security measures are implemented to shield private data from digital threats.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">III</span>
-                    <h3>Cloud</h3>
-                    <p>Tailored cloud solutions provide secure offsite storage and reliable data backup. These resources are professionally managed to ensure your information is accessible and protected from any location.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">IV</span>
-                    <h3>Support</h3>
-                    <p>Professional technical assistance is available to resolve issues and minimize downtime. Dedicated support focuses on creating you a more efficient workflow.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">V</span>
-                    <h3>Training</h3>
-                    <p>Personalized, one-on-one sessions helping individuals to learn new technologies at their own pace. This training focuses on helping you build the skills needed to navigate your digital tools.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card-inner">
-                    <span class="num">VI</span>
-                    <h3>Upgrade</h3>
-                    <p>System upgrades keep hardware and software performing at their peak. Staying current with the latest updates ensures longer compatibility, strengthens security, and improves your system performance.</p>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <a href="https://www.techct.com" class="brand-url">www.techct.com</a>
-            <p class="copyright">
-                &copy; <span id="year"></span> ZC Consulting LLC, Connecticut. All rights reserved.
-            </p>
-        </footer>
+<!-- Trust Block with requested edits implemented -->
+<section class="trust-strip">
+  <div class="trust-container">
+    <div class="hero-badges">
+      <span class="badge">Computer Networking</span>
+      <span class="badge">Troubleshooting</span>
+      <span class="badge">Cybersecurity &amp; Privacy</span>
+      <span class="badge">Cloud &amp; Backups</span>
+      <span class="badge">Hardware &amp; Upgrades</span>
+      <span class="badge">Technology Training</span>
     </div>
+  </div>
+</section>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        document.addEventListener("touchstart", function() {}, {passive: true});
-    </script>
+<section class="services" id="services">
+  <div class="section-header">
+    <h2>Services</h2>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>I</em></div>
+    <div class="service-content">
+      <h3>Networking</h3>
+      <p>Professional network configuration provides a fast, stable, and secure connection across all your devices. Built to modern standards and optimized for performance, we deliver maximum connectivity for your digital environment.</p>
+      <div class="service-tags">
+        <span class="service-tag">Wi-Fi Optimization</span>
+        <span class="service-tag">Smart Home / Office</span>
+        <span class="service-tag">Network Security</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>II</em></div>
+    <div class="service-content">
+      <h3>Security</h3>
+      <p>Proactive security audits and threat assessments identify and resolve vulnerabilities before they can be exploited. We secure your personal identity, private data, and devices with advanced threat protection.</p>
+      <div class="service-tags">
+        <span class="service-tag">Device Hardening</span>
+        <span class="service-tag">Identity Protection</span>
+        <span class="service-tag">Threat Defense</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>III</em></div>
+    <div class="service-content">
+      <h3>Cloud &amp; Backup</h3>
+      <p>We provide tailored cloud solutions for secure, offsite storage and reliable data backup. These resources are professionally managed to ensure your personal and business data is accessible and protected from any location.</p>
+      <div class="service-tags">
+        <span class="service-tag">Secure Backup</span>
+        <span class="service-tag">Anywhere Access</span>
+        <span class="service-tag">Protected Offline Storage</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>IV</em></div>
+    <div class="service-content">
+      <h3>Support</h3>
+      <p>Professional technical assistance is available to eliminate downtime and resolve issues quickly. Our dedicated support ensures your technology is working when you need it.</p>
+      <div class="service-tags">
+        <span class="service-tag">Rapid Response</span>
+        <span class="service-tag">Device Management</span>
+        <span class="service-tag">Smart Tech Help</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>V</em></div>
+    <div class="service-content">
+      <h3>Training</h3>
+      <p>We offer personalized, one-on-one sessions designed to help you master new technologies at your own pace. From general use to advanced assistance, build the skills you need to navigate your digital tools.</p>
+      <div class="service-tags">
+        <span class="service-tag">Tech Navigation</span>
+        <span class="service-tag">Skill Building</span>
+        <span class="service-tag">One-on-One Sessions</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block">
+    <div class="roman-badge" aria-hidden="true"><em>VI</em></div>
+    <div class="service-content">
+      <h3>Upgrade</h3>
+      <p>We keep hardware and software current, compatible, and secure. Strategic upgrades protect your technology investments, eliminate vulnerabilities from outdated systems, and ensure your systems run at peak performance.</p>
+      <div class="service-tags">
+        <span class="service-tag">Hardware Refresh</span>
+        <span class="service-tag">System Migrations</span>
+        <span class="service-tag">Software Updates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div>
+      <h2>You get the specialist.<br>Not a help desk ticket.</h2>
+      <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
+    </div>
+    <!-- Wrapper div holds the centered header and credentials list cleanly -->
+    <div>
+      <h3 class="cred-header">Credentials</h3>
+      <ul class="cred-list">
+        <li class="cred-item">
+          <span class="cred-num">I</span>
+          <div class="cred-text">
+            <strong>CompTIA Security+ Certified</strong>
+            <span>Active Certification · Industry standard for Cybersecurity</span>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">II</span>
+          <div class="cred-text">
+            <strong>CompTIA Network+ Certified</strong>
+            <span>Active Certification · Industry Standard for Computer Networking</span>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">III</span>
+          <div class="cred-text">
+            <strong>20+ Years Enterprise IT</strong>
+            <span>Systems Engineering · Cybersecurity · Technology Support</span>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">IV</span>
+          <div class="cred-text">
+            <strong>Insured Connecticut LLC</strong>
+            <span>Fully Insured · Local Business · Onsite and Remote Support</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Contact & Inquiry block to replace generic mailto links -->
+<section class="cta-section" id="contact">
+  <h2>Let's discuss your technology needs.</h2>
+  <p>Submit your inquiry below or contact ZC Consulting directly.</p>
+  
+  <form class="contact-form" action="https://api.splitforms.com/submit/48f7e3b033274cf89b190a3c6aed00c3" method="POST">
+    <!-- Splitforms key -->
+    <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
+    
+    <!-- Optional: custom email subject line -->
+    <input type="hidden" name="subject" value="New Inquiry from techct.com">
+    
+    <!-- Honeypot spam protection (keep display:none) -->
+    <input type="checkbox" name="botcheck" style="display: none;">
+
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" autocomplete="name">
+      <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
+    </div>
+    <textarea name="message" rows="4" placeholder="How can ZC Consulting help you?" required aria-label="Inquiry Message" autocomplete="off"></textarea>
+    <button type="submit" class="cta-btn">Submit Inquiry &rarr;</button>
+  </form>
+
+  <div class="direct-contact">
+    <p class="cta-note">Email directly: <a href="mailto:contact@techct.com" class="contact-email">contact@techct.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
+  <a href="https://www.techct.com" rel="noopener">www.techct.com</a>
+</footer>
+
+<script>
+  // Set dynamic copyright year
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+  // Close mobile menu when links are clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('nav-toggle').checked = false;
+    });
+  });
+
+  // Form submission feedback
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const btn = form.querySelector('.cta-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Submit Inquiry →';
+        btn.disabled = false;
+      }, 4000);
+    });
+  }
+</script>
+
+<!-- TO DO: Paste your Google Search Console verification meta tag here once verified -->
+<!-- <meta name="google-site-verification" content="YOUR_CODE_HERE"> -->
+<!-- TO DO: Add Google Analytics GA4 tag here once your property is created -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 
 </body>
 </html>
