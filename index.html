@@ -11,11 +11,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.techct.com/">
 
-<!-- Preconnect for faster Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Open Graph -->
 <meta property="og:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
 <meta property="og:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
 <meta property="og:type" content="website">
@@ -24,13 +22,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ZC Consulting LLC">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
 <meta name="twitter:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
 <meta name="twitter:image" content="https://www.techct.com/assets/og-image.png">
 
-<!-- Local Business Schema (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,7 +64,6 @@
     --white: #ffffff;
     --off-white: #f5f6f8;
     --gray-light: #e8eaee;
-    /* High contrast compliance: changed from #7a8499 to #4e586c */
     --gray: #4e586c;
     --text: #1b2a4a;
   }
@@ -82,7 +77,6 @@
     line-height: 1.6;
   }
 
-  /* Navigation Layout & CSS Menu */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -137,7 +131,6 @@
     border-color: rgba(255,255,255,0.6);
   }
 
-  /* Responsive Mobile Menu Toggle (Pure CSS, 0 JS) */
   .nav-toggle {
     display: none;
   }
@@ -171,7 +164,6 @@
   .nav-toggle-label span::before { top: -6px; }
   .nav-toggle-label span::after { top: 6px; }
 
-  /* Hero Section Styling */
   .hero {
     min-height: 85vh;
     background: var(--off-white);
@@ -242,7 +234,6 @@
 
   .hero-cta:hover { background: var(--navy-light); }
 
-  /* Trust & Badges Strip */
   .trust-strip {
     background: var(--white);
     border-top: none;
@@ -284,7 +275,6 @@
     border-radius: 2px;
   }
 
-  /* Services Layout */
   .services {
     padding: 2rem 2rem 6rem;
     max-width: 900px;
@@ -366,7 +356,6 @@
     border-radius: 2px;
   }
 
-  /* About Strip */
   .about-strip {
     background: var(--navy-dark);
     padding: 5rem 2rem;
@@ -448,7 +437,6 @@
     color: rgba(255,255,255,0.65);
   }
 
-  /* Contact & CTA Section with Elegant Form Structure */
   .cta-section {
     padding: 6rem 2rem;
     text-align: center;
@@ -583,9 +571,7 @@
 
   footer a:hover { color: var(--white); }
 
-  /* Mobile Responsive Overrides */
   @media (max-width: 640px) {
-    /* Responsive Navigation Layout Styling */
     nav {
       padding: 0 1.5rem;
     }
@@ -625,7 +611,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Hero mobile fixes */
     .hero {
       min-height: auto;
       padding: 90px 1.5rem 3rem;
@@ -643,10 +628,9 @@
       padding: 1rem;
     }
 
-    /* Form touch targets */
     .contact-form input,
     .contact-form textarea {
-      font-size: 1rem; /* Prevents iOS zoom on focus */
+      font-size: 1rem;
       min-height: 48px;
     }
 
@@ -655,7 +639,6 @@
       text-align: center;
     }
 
-    /* Menu Opening Logic (Strictly CSS-based) */
     .nav-toggle:checked ~ .nav-links {
       transform: scaleY(1);
     }
@@ -705,7 +688,6 @@
 
 <section class="hero">
   <h1>ZC Consulting LLC</h1>
-  <!-- Streamlined Tagline and inclusive subhead implemented here -->
   <p class="hero-tagline">Professional Technology Consultation</p>
   <p class="hero-local">Providing Local and Remote Technology Services</p>
   <div class="hero-divider"></div>
@@ -713,7 +695,6 @@
   <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
 </section>
 
-<!-- Trust Block with requested edits implemented -->
 <section class="trust-strip">
   <div class="trust-container">
     <div class="hero-badges">
@@ -817,7 +798,6 @@
       <h2>You get the specialist.<br>Not a help desk ticket.</h2>
       <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
     </div>
-    <!-- Wrapper div holds the centered header and credentials list cleanly -->
     <div>
       <h3 class="cred-header">Credentials</h3>
       <ul class="cred-list">
@@ -854,19 +834,15 @@
   </div>
 </section>
 
-<!-- Detailed Contact & Inquiry block to replace generic mailto links -->
 <section class="cta-section" id="contact">
   <h2>Let's discuss your technology needs.</h2>
   <p>Submit your inquiry below or contact ZC Consulting directly.</p>
   
-  <form class="contact-form" action="https://api.splitforms.com/submit/48f7e3b033274cf89b190a3c6aed00c3" method="POST">
-    <!-- Splitforms key -->
+  <form class="contact-form" action="https://splitforms.com/api/submit" method="POST">
     <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
     
-    <!-- Optional: custom email subject line -->
     <input type="hidden" name="subject" value="New Inquiry from techct.com">
     
-    <!-- Honeypot spam protection (keep display:none) -->
     <input type="checkbox" name="botcheck" style="display: none;">
 
     <div class="form-row">
@@ -898,25 +874,17 @@
     });
   });
 
-  // Form submission feedback
+  // Updated Form submission feedback logic
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function(e) {
       const btn = form.querySelector('.cta-btn');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Submit Inquiry →';
-        btn.disabled = false;
-      }, 4000);
+      // Stays disabled and reads 'Sending...' cleanly until the browser finishes redirecting to the success screen
     });
   }
 </script>
-
-<!-- TO DO: Paste your Google Search Console verification meta tag here once verified -->
-<!-- <meta name="google-site-verification" content="YOUR_CODE_HERE"> -->
-<!-- TO DO: Add Google Analytics GA4 tag here once your property is created -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 
 </body>
 </html>
