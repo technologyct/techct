@@ -656,6 +656,16 @@
       line-height: 1.8;
     }
 
+    /* Stacks the individual trust layout components cleanly */
+    .hero-trust span {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-trust .trust-sep {
+      display: none;
+    }
+
     .hero-cta {
       width: 100%;
       text-align: center;
@@ -727,7 +737,9 @@
     <p class="hero-tagline">Professional Technology Consultation</p>
     <p class="hero-local">Providing Local and Remote Technology Services</p>
     <div class="hero-divider"></div>
-    <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
+    <p class="hero-trust">
+      <span>Industry-Certified Expertise</span><span class="trust-sep">&nbsp;·&nbsp;</span><span>Insured CT Business</span><span class="trust-sep">&nbsp;·&nbsp;</span><span>Service You Can Trust</span>
+    </p>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
   </section>
 
