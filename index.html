@@ -217,13 +217,31 @@
     display: none;
   }
 
+  /* Robust configuration for desktop layouts */
   .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--navy);
     margin-bottom: 2rem;
+  }
+
+  .hero-trust span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .hero-trust span:not(:last-child)::after {
+    content: '·';
+    margin-left: 1.5rem;
+    font-weight: 600;
+    opacity: 0.6;
   }
 
   .hero-cta {
@@ -472,7 +490,6 @@
       color: var(--navy-light);
     }
 
-    /* Target Interactions for inverted hover highlight state */
     .cred-item:hover {
       background-color: var(--white);
       border-color: transparent;
@@ -670,10 +687,18 @@
       padding: 90px 1.5rem 3rem;
     }
 
+    /* Enforces text segments to line wrap explicitly onto their own standalone rows */
     .hero-trust {
+      flex-direction: column;
+      gap: 0.6rem;
       font-size: 0.65rem;
       letter-spacing: 0.06em;
-      line-height: 1.8;
+      line-height: 1.4;
+    }
+
+    .hero-trust span:not(:last-child)::after {
+      content: '';
+      margin-left: 0;
     }
 
     .hero-cta {
@@ -747,7 +772,11 @@
     <p class="hero-tagline">Professional Technology Consultation</p>
     <p class="hero-local">Providing Local and Remote Technology Services</p>
     <div class="hero-divider"></div>
-    <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
+    <p class="hero-trust">
+      <span>Industry-Certified Expertise</span>
+      <span>Insured CT Business</span>
+      <span>Service You Can Trust</span>
+    </p>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
   </section>
 
