@@ -187,7 +187,7 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(1.8rem, 7.5vw, 4.5rem);
     font-weight: 600;
     color: var(--navy);
     line-height: 1.1;
@@ -216,6 +216,7 @@
 
   .hero-local-secondary {
     margin-top: 2rem;
+    margin-bottom: 0;
   }
 
   .hero-trust {
@@ -675,7 +676,12 @@
 
     .hero {
       min-height: auto;
-      padding: 90px 1.5rem 3rem;
+      padding: 90px 1.25rem 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 7.2vw, 2.4rem);
+      white-space: nowrap;
     }
 
     .hero-trust {
