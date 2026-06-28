@@ -213,21 +213,6 @@
     margin-bottom: 1.2rem;
   }
 
-  .hero-local-small {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: clamp(0.85rem, 1.6vw, 1rem);
-    color: var(--navy);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-  }
-
-  .hero-divider {
-    display: none;
-  }
-
   .hero-trust {
     display: flex;
     flex-wrap: wrap;
@@ -762,7 +747,7 @@
   /* Testimonials */
   .testimonials {
     padding: 5rem 2rem 6rem;
-    background: var(--white);
+    background: var(--off-white);
     border-top: 1px solid var(--gray-light);
   }
 
@@ -777,7 +762,7 @@
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack dynamically top-to-bottom */
     gap: 1.5rem;
   }
 
@@ -792,23 +777,15 @@
     transition: border-color 0.25s ease, background-color 0.25s ease;
   }
 
-  .testimonial-card.featured {
-    grid-column: 1 / -1;
-  }
-
   .testimonial-quote {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
     color: var(--text);
     line-height: 1.75;
     margin-bottom: 1.5rem;
     padding-left: 1.25rem;
     border-left: 2px solid var(--navy);
-  }
-
-  .testimonial-card.featured .testimonial-quote {
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
   }
 
   .testimonial-meta {
@@ -854,15 +831,6 @@
       transform: scale(1.06);
     }
   }
-
-  @media (max-width: 640px) {
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-    }
-    .testimonial-card.featured {
-      grid-column: 1;
-    }
-  }
 </style>
 </head>
 <body>
@@ -885,8 +853,7 @@
   <section class="hero">
     <h1>ZC Consulting LLC</h1>
     <p class="hero-tagline">Professional Technology Consultation</p>
-    <p class="hero-local-small">West Hartford, Connecticut</p>
-    <div class="hero-divider"></div>
+    <p class="hero-local">West Hartford, Connecticut</p>
     <p class="hero-trust">
       <span>Industry-Certified Expertise</span>
       <span>Insured CT Business</span>
@@ -1042,7 +1009,7 @@
       </div>
       <div class="testimonials-grid">
 
-        <div class="testimonial-card featured">
+        <div class="testimonial-card">
           <p class="testimonial-quote">My computer was hacked through email and I was being threatened by the hacker. I was desperate and tried getting computer help from other places. They said it was fixed but the hacker kept getting back in. I was losing sleep&mdash;it was truly that bad of an experience for me. I ended up getting referred to Zach at ZC Consulting. He took the time to listen to me and I felt he really understood the situation. Not just the tech stuff but how much it was affecting me. He was able to actually fix it and restore my sanity. I am so thankful I got to him!</p>
           <div class="testimonial-meta">
             <div class="testimonial-mark" aria-hidden="true"><em>I</em></div>
@@ -1121,7 +1088,7 @@
     });
   });
 
-  // Asynchronous thread isolation to prevent engine submit interruptions
+  // Disable submit button upon form submission to prevent duplicate entries
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function() {
