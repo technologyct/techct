@@ -108,6 +108,7 @@
     color: var(--white);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    white-space: nowrap; /* Fixes navigation logo wrapping on small devices */
   }
 
   .nav-links {
@@ -189,7 +190,7 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(1.8rem, 8vw, 4.5rem); /* Lowered min-size from 2.5rem to 1.8rem to prevent text wrapping on mobile */
     font-weight: 600;
     color: var(--navy);
     line-height: 1.1;
@@ -719,7 +720,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">ZC Consulting LLC</div>
+  <div class="nav-logo">ZC Consulting&nbsp;LLC</div>
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
   <label for="nav-toggle" class="nav-toggle-label">
     <span></span>
@@ -733,7 +734,7 @@
 
 <main>
   <section class="hero">
-    <h1>ZC Consulting LLC</h1>
+    <h1>ZC Consulting&nbsp;LLC</h1>
     <p class="hero-tagline">Professional Technology Consultation</p>
     <p class="hero-local">Providing Local and Remote Technology Services</p>
     <div class="hero-divider"></div>
@@ -844,7 +845,7 @@
     <div class="about-inner">
       <div>
         <h2>You get the specialist.<br>Not a help desk ticket.</h2>
-        <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
+        <p>ZC Consulting&nbsp;LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
       </div>
       <div>
         <h3 class="cred-header">Credentials</h3>
@@ -907,7 +908,7 @@
 </main>
 
 <footer>
-  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
+  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting&nbsp;LLC &middot; Connecticut &middot; All Rights Reserved</p>
   <a href="https://www.techct.com" rel="noopener">www.techct.com</a>
 </footer>
 
