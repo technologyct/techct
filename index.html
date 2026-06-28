@@ -38,6 +38,7 @@
   "email": "contact@techct.com",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "West Hartford",
     "addressRegion": "CT",
     "addressCountry": "US"
   },
@@ -213,6 +214,10 @@
     margin-bottom: 1.2rem;
   }
 
+  .hero-local-secondary {
+    margin-top: 2rem;
+  }
+
   .hero-trust {
     display: flex;
     flex-wrap: wrap;
@@ -266,15 +271,6 @@
   .trust-container {
     max-width: 900px;
     margin: 0 auto;
-  }
-
-  .trust-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 1.5rem;
   }
 
   .hero-badges {
@@ -762,7 +758,7 @@
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Stack dynamically top-to-bottom */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
@@ -833,11 +829,11 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <nav>
   <div class="nav-logo">ZC Consulting LLC</div>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" role="button" aria-expanded="false">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
   <label for="nav-toggle" class="nav-toggle-label">
     <span></span>
   </label>
@@ -860,7 +856,7 @@
       <span>Service You Can Trust</span>
     </p>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
-    <p class="hero-local" style="margin-top: 2rem;">Providing Local and Remote Technology Services</p>
+    <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
   </section>
 
   <section class="trust-strip">
@@ -1063,7 +1059,7 @@
 
 <footer>
   <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
-  <a href="https://www.techct.com" rel="noopener">www.techct.com</a>
+  <a href="#top">www.techct.com</a>
 </footer>
 
 <script>
