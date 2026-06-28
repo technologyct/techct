@@ -186,13 +186,12 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 600;
     color: var(--navy);
     line-height: 1.1;
     letter-spacing: -0.01em;
     margin-bottom: 0.75rem;
-    white-space: nowrap;
   }
 
   .hero-tagline {
@@ -218,7 +217,6 @@
     display: none;
   }
 
-  /* Robust configuration for desktop layouts */
   .hero-trust {
     display: flex;
     flex-wrap: wrap;
@@ -688,7 +686,6 @@
       padding: 90px 1.5rem 3rem;
     }
 
-    /* Enforces text segments to line wrap explicitly onto their own standalone rows */
     .hero-trust {
       flex-direction: column;
       gap: 0.6rem;
@@ -750,6 +747,111 @@
       display: flex !important;
     }
   }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 5rem 2rem 6rem;
+    background: var(--white);
+    border-top: 1px solid var(--gray-light);
+  }
+
+  .testimonials-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .testimonials .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 2rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+  }
+
+  .testimonial-card.featured {
+    grid-column: 1 / -1;
+  }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--navy);
+  }
+
+  .testimonial-card.featured .testimonial-quote {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+  }
+
+  .testimonial-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testimonial-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .testimonial-attribution {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  @media (hover: hover) {
+    .testimonial-card:hover {
+      background-color: var(--off-white);
+      border-color: var(--navy-light);
+    }
+    .testimonial-card:hover .testimonial-mark {
+      background-color: var(--off-white);
+      color: var(--navy);
+      border-color: var(--navy-light);
+      transform: scale(1.06);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    .testimonial-card.featured {
+      grid-column: 1;
+    }
+  }
 </style>
 </head>
 <body>
@@ -763,6 +865,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -802,6 +905,19 @@
     <article class="service-block">
       <div class="roman-badge" aria-hidden="true"><em>I</em></div>
       <div class="service-content">
+        <h3>Cybersecurity</h3>
+        <p>Proactive security audits and threat assessments identify and resolve vulnerabilities before they can be exploited. We secure your personal identity, private data, and devices with advanced threat protection.</p>
+        <div class="service-tags">
+          <span class="service-tag">Device Hardening</span>
+          <span class="service-tag">Identity Protection</span>
+          <span class="service-tag">Threat Defense</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>II</em></div>
+      <div class="service-content">
         <h3>Networking</h3>
         <p>Professional network configuration provides a fast, stable, and secure connection across all your devices. Built to modern standards and optimized for performance, we deliver maximum connectivity for your digital environment.</p>
         <div class="service-tags">
@@ -813,23 +929,10 @@
     </article>
 
     <article class="service-block">
-      <div class="roman-badge" aria-hidden="true"><em>II</em></div>
-      <div class="service-content">
-        <h3>Security</h3>
-        <p>Proactive security audits and threat assessments identify and resolve vulnerabilities before they can be exploited. We secure your personal identity, private data, and devices with advanced threat protection.</p>
-        <div class="service-tags">
-          <span class="service-tag">Device Hardening</span>
-          <span class="service-tag">Identity Protection</span>
-          <span class="service-tag">Threat Defense</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="service-block">
       <div class="roman-badge" aria-hidden="true"><em>III</em></div>
       <div class="service-content">
         <h3>Cloud &amp; Backup</h3>
-        <p>We provide tailored cloud solutions for secure, offsite storage and reliable data backup. These resources are professionally managed to ensure your personal and business data is accessible and protected from any location.</p>
+        <p>We provide tailored cloud solutions for secure, offsite storage and reliable data backup. These resources are professionally managed to ensure your critical data is accessible and protected from any location.</p>
         <div class="service-tags">
           <span class="service-tag">Secure Backup</span>
           <span class="service-tag">Anywhere Access</span>
@@ -840,6 +943,19 @@
 
     <article class="service-block">
       <div class="roman-badge" aria-hidden="true"><em>IV</em></div>
+      <div class="service-content">
+        <h3>Upgrade</h3>
+        <p>We keep hardware and software current, compatible, and secure. Strategic upgrades protect your technology investments, eliminate vulnerabilities from outdated systems, and ensure your systems run at peak performance.</p>
+        <div class="service-tags">
+          <span class="service-tag">Hardware Refresh</span>
+          <span class="service-tag">System Migrations</span>
+          <span class="service-tag">Software Updates</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-block">
+      <div class="roman-badge" aria-hidden="true"><em>V</em></div>
       <div class="service-content">
         <h3>Support</h3>
         <p>Professional technical assistance is available to eliminate downtime and resolve issues quickly. Our dedicated support ensures your technology is working when you need it.</p>
@@ -852,7 +968,7 @@
     </article>
 
     <article class="service-block">
-      <div class="roman-badge" aria-hidden="true"><em>V</em></div>
+      <div class="roman-badge" aria-hidden="true"><em>VI</em></div>
       <div class="service-content">
         <h3>Training</h3>
         <p>We offer personalized, one-on-one sessions designed to help you master new technologies at your own pace. From general use to advanced assistance, build the skills you need to navigate your digital tools.</p>
@@ -863,26 +979,13 @@
         </div>
       </div>
     </article>
-
-    <article class="service-block">
-      <div class="roman-badge" aria-hidden="true"><em>VI</em></div>
-      <div class="service-content">
-        <h3>Upgrade</h3>
-        <p>We keep hardware and software current, compatible, and secure. Strategic upgrades protect your technology investments, eliminate vulnerabilities from outdated systems, and ensure your systems run at peak performance.</p>
-        <div class="service-tags">
-          <span class="service-tag">Hardware Refresh</span>
-          <span class="service-tag">System Migrations</span>
-          <span class="service-tag">Software Updates</span>
-        </div>
-      </div>
-    </article>
   </section>
 
   <section class="about-strip" id="about">
     <div class="about-inner">
       <div>
         <h2>You get the specialist.<br>Not a help desk ticket.</h2>
-        <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
+        <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. We deliver experienced technology consultation and support that you can rely on.</p>
       </div>
       <div>
         <h3 class="cred-header">Credentials</h3>
@@ -916,6 +1019,41 @@
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <h2>Client Testimonials</h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card featured">
+          <p class="testimonial-quote">My computer was hacked through email and I was being threatened by the hacker. I was desperate and tried getting computer help from other places. They said it was fixed but the hacker kept getting back in. I was losing sleep&mdash;it was truly that bad of an experience for me. I ended up getting referred to Zach at ZC Consulting. He took the time to listen to me and I felt he really understood the situation. Not just the tech stuff but how much it was affecting me. He was able to actually fix it and restore my sanity. I am so thankful I got to him!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-mark" aria-hidden="true"><em>I</em></div>
+            <span class="testimonial-attribution">Local Connecticut Client</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">I hired ZC Consulting for a project to migrate our older systems to a new cloud based environment. Data retention and security were a major priority. We are a small company that deals with high balance transactions and our data is everything to us. We were in a situation where we needed to upgrade, but kept putting it off due to hesitancy. After meeting with various companies, we decided to go with ZC Consulting. Zach was extremely detailed, easy to reach when we needed, and kept us informed throughout the project. Most importantly the work was completed as expected!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-mark" aria-hidden="true"><em>II</em></div>
+            <span class="testimonial-attribution">Remote USA Client</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Zach was very helpful, kind, understanding and professional. He very much knows his stuff. I highly recommend using ZC Consulting.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-mark" aria-hidden="true"><em>III</em></div>
+            <span class="testimonial-attribution">Local Connecticut Client</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
