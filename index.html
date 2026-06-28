@@ -69,11 +69,9 @@
 
   html { 
     scroll-behavior: smooth; 
-    /* Fixes anchor link scroll offset beneath fixed 60px header */
     scroll-margin-top: 60px; 
   }
 
-  /* Apply scroll-margin directly to section landing points */
   section {
     scroll-margin-top: 60px;
   }
@@ -92,7 +90,6 @@
     background: rgba(27, 42, 74, 0.97);
     backdrop-filter: blur(6px);
     padding: 0 2.5rem;
-    /* Keeps menu items safe from display notches in landscape orientation */
     padding-left: calc(2.5rem + env(safe-area-inset-left));
     padding-right: calc(2.5rem + env(safe-area-inset-right));
     height: 60px;
@@ -108,7 +105,6 @@
     color: var(--white);
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    white-space: nowrap; /* Fixes navigation logo wrapping on small devices */
   }
 
   .nav-links {
@@ -190,7 +186,7 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 8vw, 4.5rem); /* Lowered min-size from 2.5rem to 1.8rem to prevent text wrapping on mobile */
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 600;
     color: var(--navy);
     line-height: 1.1;
@@ -372,22 +368,6 @@
     border-radius: 2px;
   }
 
-  @media (hover: hover) {
-    .service-block:hover {
-      background-color: var(--off-white);
-      border-color: var(--navy-light);
-    }
-    .service-block:hover .roman-badge {
-      background-color: var(--white);
-      color: var(--navy);
-      border-color: var(--navy-light);
-      transform: scale(1.06);
-    }
-    .service-block:hover .service-content h3 {
-      color: var(--navy-light);
-    }
-  }
-
   .about-strip {
     background: var(--navy-dark);
     padding: 5rem 2rem;
@@ -431,18 +411,23 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.5rem;
   }
 
   .cred-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding-bottom: 1.25rem;
+    padding: 1rem;
+    margin: 0 -1rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
   }
 
-  .cred-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .cred-item:last-child { 
+    border-bottom: 1px solid transparent; 
+  }
 
   .cred-num {
     font-family: 'Cormorant Garamond', serif;
@@ -452,6 +437,7 @@
     line-height: 1;
     min-width: 2rem;
     padding-top: 0.1rem;
+    transition: transform 0.25s ease, color 0.25s ease;
   }
 
   .cred-text strong {
@@ -462,11 +448,45 @@
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 0.2rem;
+    transition: color 0.25s ease;
   }
 
   .cred-text span {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.65);
+    transition: color 0.25s ease;
+  }
+
+  @media (hover: hover) {
+    .service-block:hover {
+      background-color: var(--off-white);
+      border-color: var(--navy-light);
+    }
+    .service-block:hover .roman-badge {
+      background-color: var(--white);
+      color: var(--navy);
+      border-color: var(--navy-light);
+      transform: scale(1.06);
+    }
+    .service-block:hover .service-content h3 {
+      color: var(--navy-light);
+    }
+
+    /* Target Interactions for inverted hover highlight state */
+    .cred-item:hover {
+      background-color: var(--white);
+      border-color: transparent;
+    }
+    .cred-item:hover .cred-num {
+      color: var(--navy-dark);
+      transform: scale(1.08);
+    }
+    .cred-item:hover .cred-text strong {
+      color: var(--navy-dark);
+    }
+    .cred-item:hover .cred-text span {
+      color: var(--gray);
+    }
   }
 
   .cta-section {
@@ -603,7 +623,6 @@
 
   footer a:hover { color: var(--white); }
 
-  /* Responsive Mobile UI Execution Layer */
   @media (max-width: 640px) {
     nav {
       padding: 0 1.5rem;
@@ -657,23 +676,12 @@
       line-height: 1.8;
     }
 
-    /* Stacks the individual trust layout components cleanly */
-    .hero-trust span {
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-trust .trust-sep {
-      display: none;
-    }
-
     .hero-cta {
       width: 100%;
       text-align: center;
       padding: 1rem;
     }
 
-    /* Solves iOS input focused-zoom & establishes correct touch target limits */
     .contact-form input,
     .contact-form textarea {
       font-size: 1rem;
@@ -705,6 +713,7 @@
 
     .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .service-block { grid-template-columns: 60px 1fr; padding: 2rem 0; margin: 0; }
+    .cred-item { padding: 1rem 0; margin: 0; }
     .form-row { grid-template-columns: 1fr; gap: 1rem; }
     footer { flex-direction: column; text-align: center; }
   }
@@ -720,8 +729,8 @@
 <body>
 
 <nav>
-  <div class="nav-logo">ZC Consulting&nbsp;LLC</div>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+  <div class="nav-logo">ZC Consulting LLC</div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" role="button" aria-expanded="false">
   <label for="nav-toggle" class="nav-toggle-label">
     <span></span>
   </label>
@@ -734,13 +743,11 @@
 
 <main>
   <section class="hero">
-    <h1>ZC Consulting&nbsp;LLC</h1>
+    <h1>ZC Consulting LLC</h1>
     <p class="hero-tagline">Professional Technology Consultation</p>
     <p class="hero-local">Providing Local and Remote Technology Services</p>
     <div class="hero-divider"></div>
-    <p class="hero-trust">
-      <span>Industry-Certified Expertise</span><span class="trust-sep">&nbsp;·&nbsp;</span><span>Insured CT Business</span><span class="trust-sep">&nbsp;·&nbsp;</span><span>Service You Can Trust</span>
-    </p>
+    <p class="hero-trust">Industry-Certified Expertise &nbsp;·&nbsp; Insured CT Business &nbsp;·&nbsp; Service You Can Trust</p>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
   </section>
 
@@ -845,7 +852,7 @@
     <div class="about-inner">
       <div>
         <h2>You get the specialist.<br>Not a help desk ticket.</h2>
-        <p>ZC Consulting&nbsp;LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
+        <p>ZC Consulting LLC is a Connecticut-based technology consulting firm built on two decades of enterprise IT experience. Delivering experienced technology consultation and support that you can rely on. Your technology is our priority.</p>
       </div>
       <div>
         <h3 class="cred-header">Credentials</h3>
@@ -908,7 +915,7 @@
 </main>
 
 <footer>
-  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting&nbsp;LLC &middot; Connecticut &middot; All Rights Reserved</p>
+  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
   <a href="https://www.techct.com" rel="noopener">www.techct.com</a>
 </footer>
 
@@ -916,20 +923,31 @@
   // Set dynamic copyright year
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
-  // Close mobile menu when links are clicked
+  // Accessibility tracking expansion state on mobile configurations
+  const navToggle = document.getElementById('nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('change', function() {
+      this.setAttribute('aria-expanded', this.checked);
+    });
+  }
+
+  // Close mobile menu when links are clicked safely
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      document.getElementById('nav-toggle').checked = false;
+      if (navToggle) {
+        navToggle.checked = false;
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 
-  // Updated Form submission feedback logic
+  // Asynchronous thread isolation to prevent engine submit interruptions
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function() {
       const btn = form.querySelector('.cta-btn');
       btn.textContent = 'Sending...';
-      btn.disabled = true;
+      setTimeout(() => { btn.disabled = true; }, 50);
     });
   }
 </script>
