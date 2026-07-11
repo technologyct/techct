@@ -395,8 +395,12 @@
 
   /* ── Form ─────────────────────────────────────── */
   .contact-form {
-    max-width: 500px; margin: 2.5rem auto 0;
-    display: flex; flex-direction: column; gap: 1rem; text-align: left;
+    max-width: 500px; 
+    margin: 2.5rem auto 1.5rem; /* Mirrored homepage's 1.5rem bottom spacing */
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+    text-align: left;
   }
   .contact-form .form-note {
     font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
@@ -421,13 +425,35 @@
   }
   .form-submit:hover { background: var(--navy-light); }
 
-  /* Increased top margin to distance it from the heavy submit button above */
-  .final .email-line { margin-top: 3rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray); }
-  .email-line a {
-    color: var(--navy); text-decoration: none; font-weight: 600;
-    border-bottom: 1px dashed var(--navy);
+  /* Direct contact container matching index.html layout and spacing */
+  .direct-contact {
+    margin-top: 0; /* Set to 0 to mirror index.html layout spacing exactly */
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-light);
+    display: inline-block;
   }
-  .email-line a:hover { color: var(--navy-light); border-bottom-color: var(--navy-light); }
+
+  .cta-note {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .cta-note:last-child { margin-bottom: 0; }
+
+  .contact-email {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed var(--navy);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-email:hover {
+    color: var(--navy-light);
+    border-bottom-color: var(--navy-light);
+  }
 
   /* ── Footer ───────────────────────────────────── */
   footer {
@@ -703,7 +729,9 @@
       <button type="submit" class="form-submit">Send Message &rarr;</button>
     </form>
 
-    <p class="email-line">Or email directly: <a href="mailto:contact@techct.com?subject=Security%20Emergency">contact@techct.com</a></p>
+    <div class="direct-contact">
+      <p class="cta-note">Email directly: <a href="mailto:contact@techct.com" class="contact-email">contact@techct.com</a></p>
+    </div>
   </section>
 </main>
 
