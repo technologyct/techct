@@ -36,6 +36,7 @@
   "description": "Connecticut-based cybersecurity and IT consulting firm. CompTIA Security+ and Network+ certified. Providing network security, incident response, cloud backup, and technology support for homes and businesses.",
   "url": "https://www.techct.com",
   "email": "contact@techct.com",
+  "telephone": "+18604106521",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "West Hartford",
@@ -245,8 +246,25 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--navy);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
+
+  .hero-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    transition: color 0.2s;
+  }
+  .hero-phone svg { flex: none; opacity: 0.8; }
+  .hero-phone:hover { color: var(--navy-light); }
 
   .hero-trust span {
     display: inline-flex;
@@ -603,8 +621,9 @@
     letter-spacing: 0.06em;
     color: var(--gray);
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
+  .cta-note:last-child { margin-bottom: 0; }
 
   .contact-email {
     color: var(--navy);
@@ -877,6 +896,10 @@
       <span>Insured CT Business</span>
       <span>Service You Can Trust</span>
     </p>
+    <a href="tel:+18604106521" class="hero-phone">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
+      Call (860) 410-6521
+    </a>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
     <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
   </section>
@@ -1074,6 +1097,7 @@
     </form>
 
     <div class="direct-contact">
+      <p class="cta-note">Call directly: <a href="tel:+18604106521" class="contact-email">(860) 410-6521</a></p>
       <p class="cta-note">Email directly: <a href="mailto:contact@techct.com" class="contact-email">contact@techct.com</a></p>
     </div>
   </section>
