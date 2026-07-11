@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  ═══════════════════════════════════════════════════════════════════
+  ZC CONSULTING LLC — Security Emergency / Compromise Recovery Page
+  Matches main techct.com styling: Cormorant Garamond + Jost, navy palette.
+  ═══════════════════════════════════════════════════════════════════
+  DEPLOYMENT (protects your existing site):
+  1. BACK UP your GitHub repo first (clone it or download the ZIP).
+  2. Do NOT overwrite the root index.html (your homepage).
+     Create a folder named "help" and upload this file as  help/index.html
+     Live at:  https://www.techct.com/help/
+  3. Point your Google Ads campaign at  https://www.techct.com/help/
+
+  ALREADY SET: Google Voice number 860-410-6521 is in all call links + schema.
+  Form posts to your existing Splitforms access_key with an URGENT subject flag.
+
+  OPTIONAL — Google Ads conversion tracking: uncomment the block in <head>
+  and REPLACE AW-XXXXXXXXXX, then uncomment the gtag lines in the script
+  at the bottom so call/email/form clicks are counted as conversions.
+  ═══════════════════════════════════════════════════════════════════
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1b2a4a">
+<title>Security Emergency &mdash; Hacked Computer &amp; Email Help | West Hartford CT | ZC Consulting LLC</title>
+<meta name="description" content="Hacked? Computer or email compromised? CompTIA Security+ certified specialist in West Hartford, CT. I remove the intruder, find how they got in, and prevent them from coming back. Call for same-day help.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.techct.com/help/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Security Emergency &mdash; Hacked Computer &amp; Email Help | West Hartford CT">
+<meta property="og:description" content="CompTIA Security+ certified specialist in West Hartford. I remove the intruder, find how they got in, and prevent them from coming back.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.techct.com/help/">
+<meta property="og:image" content="https://www.techct.com/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="ZC Consulting LLC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security Emergency &mdash; Hacked Computer &amp; Email Help">
+<meta name="twitter:description" content="CompTIA Security+ certified specialist in West Hartford. Intruder removed, entry point closed, systems secured.">
+<meta name="twitter:image" content="https://www.techct.com/og-image.png">
+
+<!-- GOOGLE ADS CONVERSION TRACKING (optional) — uncomment & REPLACE AW-XXXXXXXXXX
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXXX');
+</script>
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.techct.com/#business",
+  "name": "ZC Consulting LLC",
+  "description": "Security emergency and compromise recovery in West Hartford, Connecticut. Hacked email, compromised computers, and account takeover — investigated, removed, and secured by a CompTIA Security+ certified specialist.",
+  "url": "https://www.techct.com",
+  "email": "contact@techct.com",
+  "telephone": "+18604106521",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "West Hartford",
+    "addressRegion": "CT",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "State", "name": "Connecticut"},
+    {"@type": "Country", "name": "United States"}
+  ],
+  "serviceType": ["Compromise Recovery", "Incident Response", "Cybersecurity Consulting", "Network Security"],
+  "knowsAbout": ["Cybersecurity", "Incident Response", "Email Compromise Recovery", "Network Security", "Device Hardening"],
+  "hasCredential": ["CompTIA Security+", "CompTIA Network+"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-17:00"
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1b2a4a;
+    --navy-dark: #111e35;
+    --navy-light: #243558;
+    --white: #ffffff;
+    --off-white: #f5f6f8;
+    --gray-light: #e8eaee;
+    --gray: #4e586c;
+    --text: #1b2a4a;
+    --amber: #d4a537;         /* classic gold — accent reserved ONLY for the primary action */
+    --amber-dark: #c2942a;
+    --amber-text: #1b2a4a;    /* navy text on gold — premium look + passes contrast */
+  }
+
+  html { scroll-behavior: smooth; scroll-margin-top: 60px; }
+  section { scroll-margin-top: 60px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ── Nav ──────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(27, 42, 74, 0.97);
+    backdrop-filter: blur(6px);
+    padding: 0 2.5rem;
+    padding-left: calc(2.5rem + env(safe-area-inset-left));
+    padding-right: calc(2.5rem + env(safe-area-inset-right));
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1.2rem; color: var(--white);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-call {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--amber-text);
+    background: var(--amber);
+    padding: 0.4rem 1rem; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-call:hover { background: var(--amber-dark); }
+  .nav-call svg { flex: none; }
+
+  /* ── Hero ─────────────────────────────────────── */
+  .hero {
+    min-height: 80vh;
+    background: var(--off-white);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 120px 2rem 4rem;
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    color: var(--navy);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 600; color: var(--navy);
+    line-height: 1.1; letter-spacing: -0.01em;
+    max-width: 16ch; margin-bottom: 1rem;
+  }
+  .hero-lede {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gray); line-height: 1.7;
+    max-width: 54ch; margin-bottom: 2rem;
+  }
+  .cta-row {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: center; margin-bottom: 2.25rem;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+    text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 1rem 2.25rem; border-radius: 2px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .btn svg { flex: none; }
+  .btn-amber { background: var(--amber); color: var(--amber-text); }
+  .btn-amber:hover { background: var(--amber-dark); }
+  .btn-outline {
+    background: transparent; color: var(--navy);
+    border-color: var(--gray-light);
+  }
+  .btn-outline:hover { border-color: var(--navy); }
+
+  .hero-trust {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--navy);
+  }
+  .hero-trust span { display: inline-flex; align-items: center; }
+  .hero-trust span:not(:last-child)::after {
+    content: '·'; margin-left: 1.5rem; font-weight: 600; opacity: 0.6;
+  }
+
+  /* ── Section scaffolding ──────────────────────── */
+  .section { padding: 4.5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section.alt { background: var(--off-white); max-width: none; }
+  .section.alt .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header .eyebrow {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 0.5rem;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 600; color: var(--navy); letter-spacing: -0.01em;
+    max-width: 24ch;
+  }
+  .section-header p {
+    font-size: 0.9rem; color: var(--gray);
+    max-width: 60ch; margin-top: 0.75rem; line-height: 1.75;
+  }
+
+  /* ── Triage steps ─────────────────────────────── */
+  .step-block {
+    display: grid; grid-template-columns: 80px 1fr; gap: 0;
+    border-top: 1px solid var(--gray-light);
+    padding: 2rem 1rem; margin: 0 -1rem;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .step-block:last-child { border-bottom: 1px solid var(--gray-light); }
+  .roman-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px;
+    background: var(--navy); color: var(--white);
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem;
+    border-radius: 2px; flex-shrink: 0; margin-top: 0.2rem;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .step-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.4rem; letter-spacing: -0.01em;
+  }
+  .step-content p {
+    font-size: 0.88rem; color: var(--gray); line-height: 1.75; max-width: 560px;
+  }
+  .step-content strong { color: var(--navy); font-weight: 600; }
+
+  @media (hover: hover) {
+    .step-block:hover { background-color: var(--off-white); border-color: var(--navy-light); }
+    .step-block:hover .roman-badge {
+      background-color: var(--white); color: var(--navy);
+      border-color: var(--navy-light); transform: scale(1.06);
+    }
+    .step-block:hover .step-content h3 { color: var(--navy-light); }
+  }
+
+  /* ── Three-up cards ───────────────────────────── */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card {
+    border: 1px solid var(--gray-light); border-radius: 2px;
+    padding: 2rem 1.75rem; background: var(--white);
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+  }
+  .card .card-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.3rem; color: var(--gray); line-height: 1;
+    display: block; margin-bottom: 0.75rem;
+  }
+  .card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.5rem; letter-spacing: -0.01em;
+  }
+  .card p { font-size: 0.86rem; color: var(--gray); line-height: 1.7; }
+  @media (hover: hover) {
+    .card:hover { border-color: var(--navy-light); background-color: var(--off-white); }
+  }
+
+  /* ── Specialist split ─────────────────────────── */
+  .about-strip { background: var(--navy-dark); padding: 5rem 2rem; }
+  .about-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 4rem; align-items: start;
+  }
+  .about-inner .eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.6rem;
+  }
+  .about-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600;
+    color: var(--white); line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: -0.01em;
+  }
+  .about-inner p {
+    font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1rem;
+  }
+  .cred-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .cred-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem; margin: 0 -1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08); border-radius: 2px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .cred-item:last-child { border-bottom: 1px solid transparent; }
+  .cred-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.4rem; color: rgba(255,255,255,0.25); line-height: 1;
+    min-width: 2rem; padding-top: 0.1rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+  .cred-text strong {
+    display: block; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--white);
+    margin-bottom: 0.2rem; transition: color 0.25s ease;
+  }
+  .cred-text span {
+    font-size: 0.8rem; color: rgba(255,255,255,0.65); transition: color 0.25s ease;
+  }
+  @media (hover: hover) {
+    .cred-item:hover { background-color: var(--white); border-color: transparent; }
+    .cred-item:hover .cred-num { color: var(--navy-dark); transform: scale(1.08); }
+    .cred-item:hover .cred-text strong { color: var(--navy-dark); }
+    .cred-item:hover .cred-text span { color: var(--gray); }
+  }
+
+  /* ── Testimonial ──────────────────────────────── */
+  .quote-strip { background: var(--navy); padding: 5rem 2rem; }
+  .quote-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .quote-inner blockquote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+    color: var(--white); line-height: 1.55; margin-bottom: 1.25rem;
+  }
+  .quote-inner cite {
+    font-style: normal; font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  }
+
+  /* ── Contact / final CTA ──────────────────────── */
+  .final {
+    padding: 5.5rem 2rem; text-align: center;
+    background: var(--off-white); border-top: 1px solid var(--gray-light);
+  }
+  .final .eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 0.6rem;
+  }
+  .final h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--navy);
+    margin-bottom: 0.75rem; letter-spacing: -0.01em; max-width: 20ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .final > p {
+    font-size: 0.88rem; color: var(--gray);
+    max-width: 48ch; margin: 0 auto 2rem; line-height: 1.75;
+  }
+  .final .cta-row { margin-bottom: 0; }
+
+  /* ── Form ─────────────────────────────────────── */
+  .contact-form {
+    max-width: 500px; margin: 2.5rem auto 0;
+    display: flex; flex-direction: column; gap: 1rem; text-align: left;
+  }
+  .contact-form .form-note {
+    font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--gray); text-align: center; margin-bottom: 0.25rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; padding: 0.8rem 1rem;
+    background: var(--white); border: 1px solid var(--gray-light); border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { outline: none; border-color: var(--navy); }
+  .form-submit {
+    display: inline-block; background: var(--navy); color: var(--white);
+    text-decoration: none; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 1rem 2.75rem; border-radius: 2px; border: none; cursor: pointer;
+    transition: background 0.2s; width: 100%; text-align: center;
+  }
+  .form-submit:hover { background: var(--navy-light); }
+
+  .email-line { margin-top: 2rem; font-size: 0.8rem; color: var(--gray); }
+  .email-line a {
+    color: var(--navy); text-decoration: none; font-weight: 600;
+    border-bottom: 1px dashed var(--navy);
+  }
+  .email-line a:hover { color: var(--navy-light); border-bottom-color: var(--navy-light); }
+
+  /* ── Footer ───────────────────────────────────── */
+  footer {
+    background: var(--navy-dark); padding: 1.75rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p {
+    font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  footer a {
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--white); }
+
+  /* ── Mobile sticky call bar ───────────────────── */
+  .mobile-call {
+    display: none;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 110;
+    padding: 0.6rem 0.85rem calc(0.6rem + env(safe-area-inset-bottom));
+    background: rgba(17, 30, 53, 0.97); backdrop-filter: blur(6px);
+  }
+  .mobile-call a {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background: var(--amber); color: var(--amber-text);
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; padding: 0.95rem; border-radius: 2px;
+  }
+  .mobile-call a svg { flex: none; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); border: 0;
+  }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 640px) {
+    body { padding-bottom: 68px; }
+    nav { padding: 0 1.5rem; padding-left: calc(1.5rem + env(safe-area-inset-left)); padding-right: calc(1.5rem + env(safe-area-inset-right)); }
+    .nav-call .label { display: none; }
+    .nav-call { padding: 0.4rem 0.7rem; }
+    .hero { min-height: auto; padding: 90px 1.25rem 3rem; }
+    .hero-trust { flex-direction: column; gap: 0.6rem; font-size: 0.65rem; }
+    .hero-trust span:not(:last-child)::after { content: ''; margin-left: 0; }
+    .cta-row { flex-direction: column; width: 100%; }
+    .btn { width: 100%; padding: 1rem; }
+    .step-block { grid-template-columns: 60px 1fr; padding: 2rem 0; margin: 0; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form input, .contact-form textarea { font-size: 1rem; min-height: 48px; }
+    .mobile-call { display: block; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body id="top">
+
+<nav>
+  <a class="nav-logo" href="https://www.techct.com/">ZC Consulting LLC</a>
+  <a class="nav-call" href="tel:+18604106521" data-track="call">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
+    <span class="label">(860) 410-6521</span><span class="sr-only">Call now</span>
+  </a>
+</nav>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">West Hartford, Connecticut · Security Emergency</p>
+    <h1>Someone's in your system. I'll get them out&mdash;for good.</h1>
+    <p class="hero-lede">
+      A hacked computer, compromised email, accounts you've lost control of.
+      I'm a certified Cybersecurity specialist, and I don't just remove the
+      intruder&mdash;I find how they got in and prevent them from coming back.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="tel:+18604106521" data-track="call">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
+        Call (860) 410-6521
+      </a>
+      <a class="btn btn-outline" href="#contact" data-track="scroll-form">
+        Send a Message
+      </a>
+    </div>
+    <p class="hero-trust">
+      <span>CompTIA Security+ Certified</span>
+      <span>20+ Years IT</span>
+      <span>Insured CT Business</span>
+    </p>
+  </section>
+
+  <!-- Triage -->
+  <section class="section">
+    <div class="section-header">
+      <p class="eyebrow">Acting quickly matters</p>
+      <h2>Do these three things now</h2>
+      <p>If an intruder is active, the sooner you act the better. These steps contain the damage and protect the evidence that makes a permanent fix possible.</p>
+    </div>
+
+    <article class="step-block">
+      <div class="roman-badge" aria-hidden="true"><em>I</em></div>
+      <div class="step-content">
+        <h3>Disconnect the device</h3>
+        <p>Turn off Wi-Fi or unplug the network cable on the affected computer to cut off active remote access. <strong>Don't power it off</strong>&mdash;just take it offline.</p>
+      </div>
+    </article>
+
+    <article class="step-block">
+      <div class="roman-badge" aria-hidden="true"><em>II</em></div>
+      <div class="step-content">
+        <h3>Don't wipe or reset anything</h3>
+        <p>Reinstalling Windows or factory-resetting destroys the evidence of <strong>how they got in</strong>&mdash;and can destroy your data. Without that answer, they get back in. Leave everything exactly as it is.</p>
+      </div>
+    </article>
+
+    <article class="step-block">
+      <div class="roman-badge" aria-hidden="true"><em>III</em></div>
+      <div class="step-content">
+        <h3>Call me ASAP</h3>
+        <p>The sooner you reach a professional, the less an intruder can do. Call me and we'll secure your accounts and devices together&mdash;starting with the ones that matter most.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- What a real fix looks like -->
+  <section class="section alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="eyebrow">What a real fix looks like</p>
+        <h2>Most shops patch the symptom. I close the case.</h2>
+        <p>The reason hackers "keep getting back in" is that the entry point was never closed. I treat your situation like the investigation it actually is.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="card-num">i</span>
+          <h3>Remove the intruder</h3>
+          <p>I identify and cut off every foothold&mdash;malicious software, compromised email, unknown logins, unauthorized recovery methods&mdash;across your devices and accounts.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">ii</span>
+          <h3>Find how they got in</h3>
+          <p>A phishing email, an infected download, an unsecured Wi-Fi router, a reused password&mdash;I trace the real entry point so the fix addresses the cause, not just the damage.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">iii</span>
+          <h3>Lock it down</h3>
+          <p>Strong authentication, secured devices, protected backups of your important data, and a plain-English walkthrough of exactly what changed and why you're safe now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialist / credentials -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <div>
+        <p class="eyebrow">Who you're calling</p>
+        <h2>You get the specialist.<br>Not a help desk ticket.</h2>
+        <p>I'm Zach, the specialist behind ZC Consulting LLC in West Hartford. I've spent more than two decades in enterprise IT&mdash;investigating compromises, hunting threats, and securing systems. When you call, that's the experience that picks up.</p>
+        <p>I work with people in stressful situations every week. You won't be talked down to, upsold, or handed off&mdash;just straight answers, a clear plan, and your peace of mind back.</p>
+      </div>
+      <div>
+        <ul class="cred-list">
+          <li class="cred-item">
+            <span class="cred-num">I</span>
+            <div class="cred-text">
+              <strong>CompTIA Security+ Certified</strong>
+              <span>Active Certification · Industry standard for Cybersecurity</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">II</span>
+            <div class="cred-text">
+              <strong>CompTIA Network+ Certified</strong>
+              <span>Active Certification · Industry Standard for Computer Networking</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">III</span>
+            <div class="cred-text">
+              <strong>20+ Years IT Experience</strong>
+              <span>Systems Engineering · Cybersecurity · Incident Response</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">IV</span>
+            <div class="cred-text">
+              <strong>Insured Connecticut LLC</strong>
+              <span>Fully Insured · Local Business · Onsite and Remote Support</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="quote-strip">
+    <div class="quote-inner">
+      <blockquote>
+        &ldquo;I was being threatened by the hacker. Other places said it was fixed, but the hacker kept getting back in. Zach took the time to listen&mdash;not just the tech stuff but how much it was affecting me. He was able to actually fix it and restore my sanity.&rdquo;
+      </blockquote>
+      <cite>Local Connecticut Client</cite>
+    </div>
+  </section>
+
+  <!-- What happens when you call -->
+  <section class="section">
+    <div class="section-header">
+      <p class="eyebrow">What happens when you call</p>
+      <h2>A clear path from panic to secured</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-num">i</span>
+        <h3>We talk &mdash; free</h3>
+        <p>Tell me what's happening. I'll ask a few questions, give you clear guidance, and lay out next steps.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">ii</span>
+        <h3>Assessment</h3>
+        <p>Onsite in the West Hartford area, or a secure remote session anywhere. I investigate the compromise, protect your data first, and map every foothold.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">iii</span>
+        <h3>Recovery &amp; lockdown</h3>
+        <p>Intruder removed, entry point closed, accounts and devices secured&mdash;plus a plain-English summary of what happened and what's protecting you now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="final" id="contact">
+    <p class="eyebrow">West Hartford · Greater Hartford · Remote Nationwide</p>
+    <h2>The sooner you call, the less they can do.</h2>
+    <p>The first conversation is free, and you'll come away with a plan either way.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="tel:+18604106521" data-track="call">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
+        Call (860) 410-6521
+      </a>
+    </div>
+
+    <!-- Form posts to your existing Splitforms setup; subject flags it URGENT -->
+    <form class="contact-form" action="https://splitforms.com/api/submit" method="POST" data-track="form-submit">
+      <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
+      <input type="hidden" name="subject" value="URGENT — Security Emergency from techct.com/help">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true" autocomplete="off">
+      <p class="form-note">Can't call right now? Send a message and I'll respond quickly.</p>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" autocomplete="name">
+        <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
+      </div>
+      <textarea name="message" rows="4" placeholder="Briefly, what's happening?" required aria-label="Message" autocomplete="off"></textarea>
+      <button type="submit" class="form-submit">Send Message &rarr;</button>
+    </form>
+
+    <p class="email-line">Or email directly: <a href="mailto:contact@techct.com?subject=Security%20Emergency">contact@techct.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="copyright-year">2026</span> ZC Consulting LLC &middot; Connecticut &middot; All Rights Reserved</p>
+  <a href="https://www.techct.com/">www.techct.com</a>
+</footer>
+
+<!-- Mobile sticky call bar -->
+<div class="mobile-call">
+  <a href="tel:+18604106521" data-track="call">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
+    Tap to Call &mdash; Free First Call
+  </a>
+</div>
+
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+  // Prevent duplicate form submissions
+  var cf = document.querySelector('.contact-form');
+  if (cf) {
+    cf.addEventListener('submit', function() {
+      var btn = cf.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      setTimeout(function(){ btn.disabled = true; }, 50);
+    });
+  }
+
+  // Conversion tracking hooks. Once your Google Ads tag is live (uncomment the
+  // block in <head>), uncomment the gtag lines below and REPLACE the IDs so
+  // calls, emails, and form submits register as conversions in Google Ads.
+  document.querySelectorAll('[data-track]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var kind = el.getAttribute('data-track');
+      // if (typeof gtag === 'function') {
+      //   gtag('event', 'conversion', {
+      //     'send_to': 'AW-XXXXXXXXXX/REPLACE_CONVERSION_LABEL',
+      //     'event_category': kind
+      //   });
+      // }
+    });
+  });
+</script>
+
+</body>
+</html>
