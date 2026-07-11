@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--
-  ═══════════════════════════════════════════════════════════════════
-  ZC CONSULTING LLC — Security Emergency / Compromise Recovery Page
-  Matches main techct.com styling: Cormorant Garamond + Jost, navy palette.
-  ═══════════════════════════════════════════════════════════════════
-  DEPLOYMENT (protects your existing site):
-  1. BACK UP your GitHub repo first (clone it or download the ZIP).
-  2. Do NOT overwrite the root index.html (your homepage).
-     Create a folder named "help" and upload this file as  help/index.html
-     Live at:  https://www.techct.com/help/
-  3. Point your Google Ads campaign at  https://www.techct.com/help/
-
-  ALREADY SET: Google Voice number 860-410-6521 is in all call links + schema.
-  Form posts to your existing Splitforms access_key with an URGENT subject flag.
-
-  OPTIONAL — Google Ads conversion tracking: uncomment the block in <head>
-  and REPLACE AW-XXXXXXXXXX, then uncomment the gtag lines in the script
-  at the bottom so call/email/form clicks are counted as conversions.
-  ═══════════════════════════════════════════════════════════════════
--->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1b2a4a">
@@ -95,9 +75,9 @@
     --gray-light: #e8eaee;
     --gray: #4e586c;
     --text: #1b2a4a;
-    --amber: #d4a537;         /* classic gold — accent reserved ONLY for the primary action */
+    --amber: #d4a537;         
     --amber-dark: #c2942a;
-    --amber-text: #1b2a4a;    /* navy text on gold — premium look + passes contrast */
+    --amber-text: #1b2a4a;    
   }
 
   html { scroll-behavior: smooth; scroll-margin-top: 60px; }
@@ -172,7 +152,13 @@
     font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 600; color: var(--navy);
     line-height: 1.1; letter-spacing: -0.01em;
-    max-width: 16ch; margin-bottom: 1rem;
+    max-width: 16ch; margin-bottom: 0.9rem;
+  }
+  .hero-sub {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1.1rem;
   }
   .hero-lede {
     font-size: clamp(0.95rem, 2vw, 1.15rem);
@@ -202,15 +188,29 @@
   .btn-outline:hover { border-color: var(--navy); }
 
   .hero-trust {
-    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-    gap: 0.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1.0rem;
     font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--navy);
+    width: 100%;
+    transform: translateX(-7px);
   }
   .hero-trust span { display: inline-flex; align-items: center; }
+
+  .hero-trust span:last-child {
+    margin-right: -0.1em;
+  }
+
   .hero-trust span:not(:last-child)::after {
-    content: '·'; margin-left: 1.5rem; font-weight: 600; opacity: 0.6;
+    content: '·'; 
+    margin-left: 1.0rem;
+    font-weight: 600; 
+    opacity: 0.6;
   }
 
   /* ── Section scaffolding ──────────────────────── */
@@ -346,10 +346,30 @@
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: clamp(1.2rem, 2.6vw, 1.6rem);
     color: var(--white); line-height: 1.55; margin-bottom: 1.25rem;
+    text-wrap: balance;
   }
   .quote-inner cite {
     font-style: normal; font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  }
+
+  /* ── What happens when you call ───────────────── */
+  .section {
+    padding: 4.5rem 2rem; max-width: 900px; margin: 0 auto;
+  }
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  .section-header .eyebrow {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 0.5rem;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 600; color: var(--navy); letter-spacing: -0.01em;
+    max-width: 24ch;
   }
 
   /* ── Contact / final CTA ──────────────────────── */
@@ -401,7 +421,8 @@
   }
   .form-submit:hover { background: var(--navy-light); }
 
-  .email-line { margin-top: 2rem; font-size: 0.8rem; color: var(--gray); }
+  /* Increased top margin to distance it from the heavy submit button above */
+  .final .email-line { margin-top: 3rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray); }
   .email-line a {
     color: var(--navy); text-decoration: none; font-weight: 600;
     border-bottom: 1px dashed var(--navy);
@@ -455,8 +476,21 @@
     .nav-call .label { display: none; }
     .nav-call { padding: 0.4rem 0.7rem; }
     .hero { min-height: auto; padding: 90px 1.25rem 3rem; }
-    .hero-trust { flex-direction: column; gap: 0.6rem; font-size: 0.65rem; }
+
+    .hero-trust {
+      display: flex; 
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.65rem;
+      margin-right: 0;
+      transform: none; 
+    }
+    .hero-trust span {
+      justify-self: center !important;
+      text-align: center !important;
+    }
     .hero-trust span:not(:last-child)::after { content: ''; margin-left: 0; }
+
     .cta-row { flex-direction: column; width: 100%; }
     .btn { width: 100%; padding: 1rem; }
     .step-block { grid-template-columns: 60px 1fr; padding: 2rem 0; margin: 0; }
@@ -480,8 +514,9 @@
 <main>
   <!-- Hero -->
   <section class="hero">
-    <p class="hero-eyebrow">West Hartford, Connecticut · Security Emergency</p>
+    <p class="hero-eyebrow">West&nbsp;Hartford, Connecticut &middot; Security Emergency</p>
     <h1>Someone's in your system. I'll get them out&mdash;for good.</h1>
+    <h2 class="hero-sub">Hacked Computer &amp; Email Recovery<br>West&nbsp;Hartford, Connecticut</h2>
     <p class="hero-lede">
       A hacked computer, compromised email, accounts you've lost control of.
       I'm a certified Cybersecurity specialist, and I don't just remove the
@@ -499,7 +534,7 @@
     <p class="hero-trust">
       <span>CompTIA Security+ Certified</span>
       <span>20+ Years IT</span>
-      <span>Insured CT Business</span>
+      <span>Insured Connecticut Business</span>
     </p>
   </section>
 
@@ -612,7 +647,7 @@
   <section class="quote-strip">
     <div class="quote-inner">
       <blockquote>
-        &ldquo;I was being threatened by the hacker. Other places said it was fixed, but the hacker kept getting back in. Zach took the time to listen&mdash;not just the tech stuff but how much it was affecting me. He was able to actually fix it and restore my sanity.&rdquo;
+        &ldquo;I was being threatened by the hacker. Other places said it was fixed, but the hacker kept getting back in. Zach took the time to listen&mdash;not just the tech stuff but how much it was affecting me. He was able to actually fix it and restore my&nbsp;sanity.&rdquo;
       </blockquote>
       <cite>Local Connecticut Client</cite>
     </div>
@@ -645,9 +680,9 @@
 
   <!-- Contact -->
   <section class="final" id="contact">
-    <p class="eyebrow">West Hartford · Greater Hartford · Remote Nationwide</p>
+    <p class="eyebrow">West&nbsp;Hartford &middot; Greater&nbsp;Hartford Remote&nbsp;Nationwide</p>
     <h2>The sooner you call, the less they can do.</h2>
-    <p>The first conversation is free, and you'll come away with a plan either way.</p>
+    <p>The first conversation is free and you'll come away with a plan either way.</p>
     <div class="cta-row">
       <a class="btn btn-amber" href="tel:+18604106521" data-track="call">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.3 0 .7-.2 1l-2.2 2.1z"/></svg>
@@ -655,7 +690,6 @@
       </a>
     </div>
 
-    <!-- Form posts to your existing Splitforms setup; subject flags it URGENT -->
     <form class="contact-form" action="https://splitforms.com/api/submit" method="POST" data-track="form-submit">
       <input type="hidden" name="access_key" value="48f7e3b033274cf89b190a3c6aed00c3">
       <input type="hidden" name="subject" value="URGENT — Security Emergency from techct.com/help">
@@ -699,7 +733,7 @@
     });
   }
 
-  // Conversion tracking hooks. Once your Google Ads tag is live (uncomment the
+  // GOOGLE ADS CONVERSION TRACKING: Once your Google Ads tag is live (uncomment the
   // block in <head>), uncomment the gtag lines below and REPLACE the IDs so
   // calls, emails, and form submits register as conversions in Google Ads.
   document.querySelectorAll('[data-track]').forEach(function(el){
