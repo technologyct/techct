@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1b2a4a">
 <title>ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut</title>
-<meta name="description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Network security, incident response, cloud backup, and technology help for homes and businesses. Serving CT locally and clients nationwide.">
-<meta name="keywords" content="IT Consulting Connecticut, Cybersecurity Consultant CT, Network Security Connecticut, Small Business IT Consulting CT, Cloud Backup Connecticut, CompTIA Security Plus, ZC Consulting LLC, techct.com">
+<meta name="description" content="Connecticut-based cybersecurity and IT consulting. CompTIA CSIS, CIOS, Security+, Network+ and A+ certified. Network security, incident response, cloud backup, and technology help for homes and businesses. Serving CT locally and clients nationwide.">
+<meta name="keywords" content="IT Consulting Connecticut, Cybersecurity Consultant CT, Network Security Connecticut, Small Business IT Consulting CT, Cloud Backup Connecticut, CompTIA Security Plus, CompTIA CSIS, CompTIA CIOS, ZC Consulting LLC, techct.com">
 <meta name="author" content="ZC Consulting LLC">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.techct.com/">
@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap&font-display=swap" rel="stylesheet">
 
 <meta property="og:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
-<meta property="og:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
+<meta property="og:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA CSIS, CIOS, Security+, Network+ and A+ certified. Serving CT locally and clients nationwide.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.techct.com/">
 <meta property="og:image" content="https://www.techct.com/og-image.png">
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ZC Consulting LLC | Cybersecurity & IT Consulting Connecticut">
-<meta name="twitter:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA Security+ certified. Serving CT locally and clients nationwide.">
+<meta name="twitter:description" content="Connecticut-based cybersecurity and IT consulting. CompTIA CSIS, CIOS, Security+, Network+ and A+ certified. Serving CT locally and clients nationwide.">
 <meta name="twitter:image" content="https://www.techct.com/og-image.png">
 
 <script type="application/ld+json">
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "ZC Consulting LLC",
-  "description": "Connecticut-based cybersecurity and IT consulting firm. CompTIA Security+ and Network+ certified. Providing network security, incident response, cloud backup, and technology services for homes and businesses.",
+  "description": "Connecticut-based cybersecurity and IT consulting firm. CompTIA Secure Infrastructure Specialist (CSIS) and IT Operations Specialist (CIOS); Security+, Network+ and A+ certified. Providing network security, incident response, cloud backup, and technology services for homes and businesses.",
   "url": "https://www.techct.com",
   "email": "contact@techct.com",
   "telephone": "+18604106521",
@@ -48,8 +48,8 @@
     {"@type": "Country", "name": "United States"}
   ],
   "serviceType": ["Cybersecurity Consulting", "IT Consulting", "Network Security", "Cloud Backup", "Technology Training", "Hardware Upgrade"],
-  "knowsAbout": ["Cybersecurity", "Network Security", "CompTIA Security+", "CompTIA Network+", "Cloud Computing", "IT Consulting"],
-  "hasCredential": ["CompTIA Security+", "CompTIA Network+"],
+  "knowsAbout": ["Cybersecurity", "Network Security", "CompTIA Security+", "CompTIA Network+", "CompTIA A+", "Cloud Computing", "IT Consulting"],
+  "hasCredential": ["CompTIA Secure Infrastructure Specialist (CSIS)", "CompTIA IT Operations Specialist (CIOS)", "CompTIA Security+", "CompTIA Network+", "CompTIA A+"],
   "priceRange": "$$",
   "openingHours": "Mo-Fr 09:00-17:00"
 }
@@ -232,6 +232,24 @@
   .hero-local-secondary {
     margin-top: 2rem;
     margin-bottom: 0;
+  }
+
+  .hero-certs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.4rem, 2.2vw, 1.5rem);
+    width: 100%;
+    max-width: 620px;
+    margin: 1.25rem auto 0;
+  }
+
+  .hero-certs img {
+    display: block;
+    width: clamp(46px, 12vw, 86px);
+    height: auto;
+    flex-shrink: 1;
   }
 
   .hero-trust {
@@ -900,6 +918,13 @@
     </a>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
     <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
+    <div class="hero-certs">
+      <img src="/certs/comptia-csis.png" width="240" height="240" loading="lazy" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
+      <img src="/certs/comptia-cios.png" width="240" height="240" loading="lazy" decoding="async" alt="CompTIA IT Operations Specialist (CIOS) certified">
+      <img src="/certs/comptia-security-plus.png" width="240" height="240" loading="lazy" decoding="async" alt="CompTIA Security+ certified">
+      <img src="/certs/comptia-network-plus.png" width="240" height="240" loading="lazy" decoding="async" alt="CompTIA Network+ certified">
+      <img src="/certs/comptia-a-plus.png" width="240" height="240" loading="lazy" decoding="async" alt="CompTIA A+ certified">
+    </div>
   </section>
 
   <section class="trust-strip">
@@ -1011,26 +1036,33 @@
           <li class="cred-item">
             <span class="cred-num">I</span>
             <div class="cred-text">
-              <strong>CompTIA Security+ Certified</strong>
-              <span>Active Certification · Industry standard for Cybersecurity</span>
+              <strong>CompTIA Secure Infrastructure Specialist</strong>
+              <span>Active Certification · Securing Networks, Systems and Data</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">II</span>
             <div class="cred-text">
-              <strong>CompTIA Network+ Certified</strong>
-              <span>Active Certification · Industry Standard for Computer Networking</span>
+              <strong>CompTIA IT Operations Specialist</strong>
+              <span>Active Certification · Devices, Systems and IT Operations</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">III</span>
+            <div class="cred-text">
+              <strong>CompTIA Security+, Network+ &amp; A+ Certified</strong>
+              <span>Active Certifications · Industry Standards for Cybersecurity, Networking and Systems Support</span>
+            </div>
+          </li>
+          <li class="cred-item">
+            <span class="cred-num">IV</span>
             <div class="cred-text">
               <strong>20+ Years Enterprise IT</strong>
               <span>Systems Engineering · Cybersecurity · Technology Consulting</span>
             </div>
           </li>
           <li class="cred-item">
-            <span class="cred-num">IV</span>
+            <span class="cred-num">V</span>
             <div class="cred-text">
               <strong>Insured Connecticut LLC</strong>
               <span>Fully Insured · Local Business · Onsite and Remote Support</span>
