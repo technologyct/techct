@@ -254,6 +254,9 @@
     mix-blend-mode: multiply;
   }
 
+  /* Stackable badge art has more built-in padding and a lighter ring than the Plus Series art; scale to match */
+  .hero-certs img.cert-stack { transform: scale(1.07); }
+
   .hero-trust {
     display: flex;
     flex-wrap: wrap;
@@ -921,9 +924,9 @@
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
     <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
     <div class="hero-certs">
-      <img src="/certs/comptia-csap.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security Analytics Professional (CSAP) certified">
-      <img src="/certs/comptia-csis.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
-      <img src="/certs/comptia-cios.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA IT Operations Specialist (CIOS) certified">
+      <img class="cert-stack" src="/certs/comptia-csap.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security Analytics Professional (CSAP) certified">
+      <img class="cert-stack" src="/certs/comptia-csis.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
+      <img class="cert-stack" src="/certs/comptia-cios.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA IT Operations Specialist (CIOS) certified">
       <img src="/certs/comptia-cysa-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA CySA+ certified">
       <img src="/certs/comptia-security-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security+ certified">
       <img src="/certs/comptia-network-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Network+ certified">
