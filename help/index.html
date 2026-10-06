@@ -233,6 +233,9 @@
     mix-blend-mode: multiply;
   }
 
+  /* Stackable badge art has more built-in padding and a lighter ring than the Plus Series art; scale to match */
+  .hero-certs img.cert-stack { transform: scale(1.07); }
+
   /* ── Section scaffolding ──────────────────────── */
   .section { padding: 4.5rem 2rem; max-width: 900px; margin: 0 auto; }
   .section.alt { background: var(--off-white); max-width: none; }
@@ -401,6 +404,8 @@
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--gray); margin-bottom: 0.6rem;
   }
+  /* Optical centering: the longer "Greater Hartford" half makes this line read right of center */
+  .final .eyebrow-local { position: relative; left: -0.3em; }
   .final h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--navy);
@@ -516,6 +521,11 @@
     .cards { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
+  /* Trust line: one row only when it fits; stack below that so no separator dot strands at a line end */
+  @media (max-width: 760px) {
+    .hero-trust { flex-direction: column; gap: 0.6rem; transform: none; }
+    .hero-trust span:not(:last-child)::after { content: ''; margin-left: 0; }
+  }
   @media (max-width: 640px) {
     body { padding-bottom: 68px; }
     nav { padding: 0 1.5rem; padding-left: calc(1.5rem + env(safe-area-inset-left)); padding-right: calc(1.5rem + env(safe-area-inset-right)); }
@@ -579,13 +589,13 @@
     </div>
     <p class="hero-trust">
       <span>Certified Security Specialist</span>
-      <span>20+ Years IT</span>
+      <span>20+ Years IT Experience</span>
       <span>Insured Connecticut Business</span>
     </p>
     <div class="hero-certs">
-      <img src="/certs/comptia-csap.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security Analytics Professional (CSAP) certified">
-      <img src="/certs/comptia-csis.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
-      <img src="/certs/comptia-cios.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA IT Operations Specialist (CIOS) certified">
+      <img class="cert-stack" src="/certs/comptia-csap.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security Analytics Professional (CSAP) certified">
+      <img class="cert-stack" src="/certs/comptia-csis.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
+      <img class="cert-stack" src="/certs/comptia-cios.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA IT Operations Specialist (CIOS) certified">
       <img src="/certs/comptia-cysa-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA CySA+ certified">
       <img src="/certs/comptia-security-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security+ certified">
       <img src="/certs/comptia-network-plus.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Network+ certified">
@@ -749,7 +759,7 @@
 
   <!-- Contact -->
   <section class="final" id="contact">
-    <p class="eyebrow">West&nbsp;Hartford &middot; Greater&nbsp;Hartford<br>Remote&nbsp;Nationwide</p>
+    <p class="eyebrow"><span class="eyebrow-local">West&nbsp;Hartford &middot; Greater&nbsp;Hartford</span><br>Remote&nbsp;Nationwide</p>
     <h2>The sooner you call, the less they can do.</h2>
     <p>The first conversation is free and you'll come away with a plan either way.</p>
     <div class="cta-row">
