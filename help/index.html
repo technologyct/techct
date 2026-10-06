@@ -521,6 +521,10 @@
     .cards { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
+  /* Even out line lengths in headlines and the closing paragraph so no single word is stranded on the last line */
+  .hero h1, .section-header h2, .final h2, .final > p:not(.eyebrow) { text-wrap: balance; }
+  .nowrap { white-space: nowrap; }
+
   /* Trust line: one row only when it fits; stack below that so no separator dot strands at a line end */
   @media (max-width: 760px) {
     .hero-trust { flex-direction: column; gap: 0.6rem; transform: none; }
@@ -571,7 +575,7 @@
   <!-- Hero -->
   <section class="hero">
     <p class="hero-eyebrow">Security Emergency</p>
-    <h1>Someone's in your system. I'll get them out&mdash;for good.</h1>
+    <h1>Someone's in your system. I'll get them <span class="nowrap">out&mdash;for good.</span></h1>
     <h2 class="hero-sub">Hacked Computer &amp; Email Recovery<br>West&nbsp;Hartford, Connecticut</h2>
     <p class="hero-lede">
       A hacked computer, compromised email, accounts you've lost control of.
