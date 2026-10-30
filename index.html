@@ -229,9 +229,12 @@
     margin-bottom: 1.2rem;
   }
 
+  .hero-local:has(+ .hero-local-secondary) {
+    margin-bottom: 0.35rem;
+  }
+
   .hero-local-secondary {
-    margin-top: 2rem;
-    margin-bottom: 0;
+    margin-top: 0;
   }
 
   .hero-certs {
@@ -899,7 +902,8 @@
     font-weight: 600;
     font-size: clamp(1.15rem, 2.2vw, 1.35rem);
     color: var(--navy);
-    margin-bottom: 0.4rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
   .cert-intro-text {
     font-family: 'Jost', sans-serif;
@@ -931,6 +935,7 @@
     <h1>ZC Consulting LLC</h1>
     <p class="hero-tagline">Professional Technology Consultation</p>
     <p class="hero-local">West Hartford, Connecticut</p>
+    <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
     <p class="hero-trust">
       <span>Industry-Certified Expertise</span>
       <span>Insured CT Business</span>
@@ -941,7 +946,6 @@
       Call (860) 410-6521
     </a>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
-    <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
     <div class="cert-intro">
       <p class="cert-intro-title">Current Industry Certifications</p>
       <p class="cert-intro-text">These badges are certifications from CompTIA, an independent organization that tests IT professionals. They're third-party proof of expertise, not just a claim. All are kept current through ongoing training.</p>
