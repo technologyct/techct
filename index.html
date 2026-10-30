@@ -888,6 +888,25 @@
       transform: scale(1.06);
     }
   }
+
+  .cert-intro {
+    max-width: 36rem;
+    margin: 2rem auto 0;
+    text-wrap: balance;
+  }
+  .cert-intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .cert-intro-text {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+    color: var(--gray);
+    line-height: 1.65;
+  }
 </style>
 </head>
 <body id="top">
@@ -923,6 +942,10 @@
     </a>
     <a href="#contact" class="hero-cta">Schedule a Consultation &rarr;</a>
     <p class="hero-local hero-local-secondary">Providing Local and Remote Technology Services</p>
+    <div class="cert-intro">
+      <p class="cert-intro-title">Current Industry Certifications</p>
+      <p class="cert-intro-text">These badges are certifications from CompTIA, an independent organization that tests IT professionals. They're third-party proof of expertise, not just a claim. All are kept current through ongoing training.</p>
+    </div>
     <div class="hero-certs">
       <img class="cert-stack" src="/certs/comptia-csap.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Security Analytics Professional (CSAP) certified">
       <img class="cert-stack" src="/certs/comptia-csis.png" width="240" height="240" loading="eager" fetchpriority="high" decoding="async" alt="CompTIA Secure Infrastructure Specialist (CSIS) certified">
