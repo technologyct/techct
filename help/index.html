@@ -66,6 +66,9 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* Stop iOS Safari from enlarging some text blocks in landscape */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
   :root {
     --navy: #1b2a4a;
     --navy-dark: #111e35;
@@ -347,6 +350,16 @@
     min-width: 2rem; padding-top: 0.1rem;
     transition: transform 0.25s ease, color 0.25s ease;
   }
+  .cred-text { text-wrap: balance; }
+
+  /* Give the experience line the same two-row layout on both phone pages. */
+  .cred-experience-break { display: none; }
+  @media (max-width: 960px) {
+    .cred-experience-primary { white-space: nowrap; }
+    .cred-experience-separator { display: none; }
+    .cred-experience-break { display: initial; }
+  }
+
   .cred-text strong {
     display: block; font-size: 0.82rem; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--white);
@@ -530,9 +543,32 @@
     .hero-trust { flex-direction: column; gap: 0.6rem; transform: none; }
     .hero-trust span:not(:last-child)::after { content: ''; margin-left: 0; }
   }
+  @media (max-width: 960px) {
+    /* Center the name in both phone orientations, independently of the call button. */
+    nav {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      column-gap: 0.5rem;
+    }
+    .nav-logo {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      text-align: center;
+      /* Keep the name centered even when the screen's safe areas differ. */
+      position: relative;
+      left: calc((env(safe-area-inset-right) - env(safe-area-inset-left)) / 2);
+    }
+    .nav-call {
+      grid-column: 3;
+      grid-row: 1;
+      justify-self: end;
+    }
+  }
   @media (max-width: 640px) {
-    body { padding-bottom: 68px; }
     nav { padding: 0 1.5rem; padding-left: calc(1.5rem + env(safe-area-inset-left)); padding-right: calc(1.5rem + env(safe-area-inset-right)); }
+    .nav-logo { font-size: clamp(1rem, 5vw, 1.2rem); white-space: nowrap; }
+    body { padding-bottom: 68px; }
     .nav-call .label { display: none; }
     .nav-call { padding: 0.4rem 0.7rem; }
     .hero { min-height: auto; padding: 90px 1.25rem 3rem; }
@@ -707,42 +743,42 @@
             <span class="cred-num">I</span>
             <div class="cred-text">
               <strong>CompTIA Security Analytics Professional</strong>
-              <span>Active Certification · Threat Detection and Response</span>
+              <span>Active Certification<br>Threat Detection and Response</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">II</span>
             <div class="cred-text">
               <strong>CompTIA Secure Infrastructure Specialist</strong>
-              <span>Active Certification · Securing Networks, Systems and Data</span>
+              <span>Active Certification<br>Securing Networks, Systems and Data</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">III</span>
             <div class="cred-text">
               <strong>CompTIA IT Operations Specialist</strong>
-              <span>Active Certification · Devices, Systems and IT Operations</span>
+              <span>Active Certification<br>Devices, Systems and IT Operations</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">IV</span>
             <div class="cred-text">
               <strong>CompTIA CySA+, Security+, Network+ &amp; A+ Certified</strong>
-              <span>Active Certifications · Industry Standards for Security Operations, Cybersecurity, Networking and Systems Support</span>
+              <span>Active Certifications<br>Industry Standards for Security Operations, Cybersecurity, Networking and Systems Support</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">V</span>
             <div class="cred-text">
               <strong>20+ Years IT Experience</strong>
-              <span>Systems Engineering · Cybersecurity · Incident Response</span>
+              <span><span class="cred-experience-primary">Systems Engineering&nbsp;· Cybersecurity</span><span class="cred-experience-separator">&nbsp;· </span><br class="cred-experience-break">Incident Response</span>
             </div>
           </li>
           <li class="cred-item">
             <span class="cred-num">VI</span>
             <div class="cred-text">
               <strong>Insured Connecticut LLC</strong>
-              <span>Fully Insured · Local Business · Onsite and Remote Support</span>
+              <span>Fully Insured&nbsp;· Local Business&nbsp;· Onsite and Remote Support</span>
             </div>
           </li>
         </ul>
